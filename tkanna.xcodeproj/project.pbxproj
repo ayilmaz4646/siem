@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		029E199368A70A6145085884 /* Pods_tkannaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C417B02A6CBE4D98E9FF8A /* Pods_tkannaTests.framework */; };
 		5C7A8C851D1557B5002DA4B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A8C841D1557B5002DA4B7 /* AppDelegate.swift */; };
 		5C7A8C871D1557B5002DA4B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A8C861D1557B5002DA4B7 /* ViewController.swift */; };
 		5C7A8C8A1D1557B5002DA4B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C7A8C881D1557B5002DA4B7 /* Main.storyboard */; };
@@ -14,6 +15,8 @@
 		5C7A8C8F1D1557B5002DA4B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C7A8C8D1D1557B5002DA4B7 /* LaunchScreen.storyboard */; };
 		5C7A8C9A1D1557B6002DA4B7 /* tkannaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A8C991D1557B6002DA4B7 /* tkannaTests.swift */; };
 		5C7A8CA51D1557B6002DA4B7 /* tkannaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A8CA41D1557B6002DA4B7 /* tkannaUITests.swift */; };
+		A2BF32A10CE49D51722DD380 /* Pods_tkannaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB267392B71BDA574D179177 /* Pods_tkannaUITests.framework */; };
+		D069B9EA672A0761DE39CE07 /* Pods_tkanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFCECD26CE3B2DF54B4B97F /* Pods_tkanna.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1156694C350643AFF7AE14FF /* Pods-tkanna.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tkanna.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tkanna/Pods-tkanna.debug.xcconfig"; sourceTree = "<group>"; };
 		5C7A8C811D1557B5002DA4B7 /* tkanna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tkanna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C7A8C841D1557B5002DA4B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C7A8C861D1557B5002DA4B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,14 @@
 		5C7A8CA01D1557B6002DA4B7 /* tkannaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tkannaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C7A8CA41D1557B6002DA4B7 /* tkannaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tkannaUITests.swift; sourceTree = "<group>"; };
 		5C7A8CA61D1557B6002DA4B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64C417B02A6CBE4D98E9FF8A /* Pods_tkannaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tkannaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BC2BEC6804E678C88BFBE6D /* Pods-tkannaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tkannaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tkannaTests/Pods-tkannaTests.release.xcconfig"; sourceTree = "<group>"; };
+		A0067D377E88768577CB719F /* Pods-tkannaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tkannaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tkannaUITests/Pods-tkannaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B79AD5BFFD63F871BAEC101A /* Pods-tkannaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tkannaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tkannaUITests/Pods-tkannaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CFFCECD26CE3B2DF54B4B97F /* Pods_tkanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tkanna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2B4FB964DD2ECEE4CB8693D /* Pods-tkannaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tkannaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tkannaTests/Pods-tkannaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F85A66F898814D9FCE0A4F04 /* Pods-tkanna.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tkanna.release.xcconfig"; path = "Pods/Target Support Files/Pods-tkanna/Pods-tkanna.release.xcconfig"; sourceTree = "<group>"; };
+		FB267392B71BDA574D179177 /* Pods_tkannaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tkannaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D069B9EA672A0761DE39CE07 /* Pods_tkanna.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				029E199368A70A6145085884 /* Pods_tkannaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2BF32A10CE49D51722DD380 /* Pods_tkannaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +96,8 @@
 				5C7A8C981D1557B6002DA4B7 /* tkannaTests */,
 				5C7A8CA31D1557B6002DA4B7 /* tkannaUITests */,
 				5C7A8C821D1557B5002DA4B7 /* Products */,
+				69F0484AC951E87EFF9A499F /* Pods */,
+				F7F0FED4B13643C44B7B1640 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +142,29 @@
 			path = tkannaUITests;
 			sourceTree = "<group>";
 		};
+		69F0484AC951E87EFF9A499F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1156694C350643AFF7AE14FF /* Pods-tkanna.debug.xcconfig */,
+				F85A66F898814D9FCE0A4F04 /* Pods-tkanna.release.xcconfig */,
+				E2B4FB964DD2ECEE4CB8693D /* Pods-tkannaTests.debug.xcconfig */,
+				8BC2BEC6804E678C88BFBE6D /* Pods-tkannaTests.release.xcconfig */,
+				B79AD5BFFD63F871BAEC101A /* Pods-tkannaUITests.debug.xcconfig */,
+				A0067D377E88768577CB719F /* Pods-tkannaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F7F0FED4B13643C44B7B1640 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFFCECD26CE3B2DF54B4B97F /* Pods_tkanna.framework */,
+				64C417B02A6CBE4D98E9FF8A /* Pods_tkannaTests.framework */,
+				FB267392B71BDA574D179177 /* Pods_tkannaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C7A8CA91D1557B6002DA4B7 /* Build configuration list for PBXNativeTarget "tkanna" */;
 			buildPhases = (
+				399A966C6E241DA28DFB7FC8 /* [CP] Check Pods Manifest.lock */,
 				5C7A8C7D1D1557B5002DA4B7 /* Sources */,
 				5C7A8C7E1D1557B5002DA4B7 /* Frameworks */,
 				5C7A8C7F1D1557B5002DA4B7 /* Resources */,
+				E2FEF9F88716D2ADBC6469C7 /* [CP] Embed Pods Frameworks */,
+				816BC2F3A9D80D109099D865 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C7A8CAC1D1557B6002DA4B7 /* Build configuration list for PBXNativeTarget "tkannaTests" */;
 			buildPhases = (
+				22BA5243FF48D50DBC2129BA /* [CP] Check Pods Manifest.lock */,
 				5C7A8C911D1557B6002DA4B7 /* Sources */,
 				5C7A8C921D1557B6002DA4B7 /* Frameworks */,
 				5C7A8C931D1557B6002DA4B7 /* Resources */,
+				F3E05E50BC41FB934C966458 /* [CP] Embed Pods Frameworks */,
+				08CD84B80A3F2274C2F7867C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C7A8CAF1D1557B6002DA4B7 /* Build configuration list for PBXNativeTarget "tkannaUITests" */;
 			buildPhases = (
+				0DD9CF595531A5ED52BEA983 /* [CP] Check Pods Manifest.lock */,
 				5C7A8C9C1D1557B6002DA4B7 /* Sources */,
 				5C7A8C9D1D1557B6002DA4B7 /* Frameworks */,
 				5C7A8C9E1D1557B6002DA4B7 /* Resources */,
+				9A5D2A46DB7EADC216EC7EAF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +298,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08CD84B80A3F2274C2F7867C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tkannaTests/Pods-tkannaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0DD9CF595531A5ED52BEA983 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		22BA5243FF48D50DBC2129BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		399A966C6E241DA28DFB7FC8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		816BC2F3A9D80D109099D865 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tkanna/Pods-tkanna-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A5D2A46DB7EADC216EC7EAF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tkannaUITests/Pods-tkannaUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2FEF9F88716D2ADBC6469C7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tkanna/Pods-tkanna-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3E05E50BC41FB934C966458 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tkannaTests/Pods-tkannaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5C7A8C7D1D1557B5002DA4B7 /* Sources */ = {
@@ -397,6 +568,7 @@
 		};
 		5C7A8CAA1D1557B6002DA4B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1156694C350643AFF7AE14FF /* Pods-tkanna.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tkanna/Info.plist;
@@ -408,6 +580,7 @@
 		};
 		5C7A8CAB1D1557B6002DA4B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F85A66F898814D9FCE0A4F04 /* Pods-tkanna.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tkanna/Info.plist;
@@ -419,6 +592,7 @@
 		};
 		5C7A8CAD1D1557B6002DA4B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2B4FB964DD2ECEE4CB8693D /* Pods-tkannaTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = tkannaTests/Info.plist;
@@ -431,6 +605,7 @@
 		};
 		5C7A8CAE1D1557B6002DA4B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BC2BEC6804E678C88BFBE6D /* Pods-tkannaTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = tkannaTests/Info.plist;
@@ -443,6 +618,7 @@
 		};
 		5C7A8CB01D1557B6002DA4B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B79AD5BFFD63F871BAEC101A /* Pods-tkannaUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = tkannaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -454,6 +630,7 @@
 		};
 		5C7A8CB11D1557B6002DA4B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0067D377E88768577CB719F /* Pods-tkannaUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = tkannaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -482,6 +659,7 @@
 				5C7A8CAB1D1557B6002DA4B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5C7A8CAC1D1557B6002DA4B7 /* Build configuration list for PBXNativeTarget "tkannaTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +668,7 @@
 				5C7A8CAE1D1557B6002DA4B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5C7A8CAF1D1557B6002DA4B7 /* Build configuration list for PBXNativeTarget "tkannaUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +677,7 @@
 				5C7A8CB11D1557B6002DA4B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
