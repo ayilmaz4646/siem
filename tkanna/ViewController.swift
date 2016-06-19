@@ -9,47 +9,93 @@
 import UIKit
 import Kanna
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
+
+    var dataList = [String]()
+    var dataParse = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-//        let html = "<html></html>"
-//        let url = ""
-//        
-//        if let doc = Kanna.HTML(html: html, url: url, encoding: NSUTF8StringEncoding) {
-//            print(doc.title)
-//            
-//            // Search for nodes by CSS
-//            for link in doc.css("a, link") {
-//                print(link.text)
-//                print(link["href"])
-//            }
-//            
-//            // Search for nodes by XPath
-//            for link in doc.xpath("//a | //link") {
-//                print(link.text)
-//                print(link["href"])
-//            }
-//        }
-        
+        tableView.delegate = self
+        searchBar.delegate = self
+        tableView.dataSource = self
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "mycell")
+        dataList = ["ses", "ddddd"]
+//        htmlParserWithKanna("http://www.elreha.de/technische-handbucher-archiv/")
         if let doc = Kanna.HTML(url: (NSURL(string: "http://www.elreha.de/technische-handbucher-archiv/")!), encoding: NSUTF8StringEncoding) {
             
-//            <html><head></head><body><table id='tablepress-4'><tbody><tr><td class='column-1'></td></tr></tbody></table></body></html>
             // Search for nodes by XPath
-//            for link in doc.xpath("/html/body/section/div/section/article/div[1]/div[2]/div/table/tbody/tr[1]/td[1]") {
-            for link in doc.xpath("/html/body") {
+            //            for link in doc.xpath("/html/body/section/div/section/article/div[1]/div[2]/div/table/tbody/tr[1]/td[1]") {
+            //            for link in doc.xpath("/html/body") {
+            //                print(link.text)
+            //                print(link["href"])
+            //            }
+            
+            for link in doc.css("table, tbody, tr, td, strong") {
                 print(link.text)
-                print(link["href"])
+                //let text = link.text
+                dataParse += link.text!.componentsSeparatedByString(" ")
             }
+            print("DATA =", dataParse)
+            
+            self.dataList = dataParse
+            self.tableView.reloadData()
         }
+
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return dataList.count
+    }
+    
+    internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCellWithIdentifier("mycell")! as UITableViewCell
+        //let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "mycell")
+        cell.textLabel?.text = dataList[indexPath.row]
+        
+        return cell
+    
+    }
+    
+    func htmlParserWithKanna(url:String)
+    {
+        
+        if let doc = Kanna.HTML(url: (NSURL(string: url)!), encoding: NSUTF8StringEncoding) {
+            
+            // Search for nodes by XPath
+            //            for link in doc.xpath("/html/body/section/div/section/article/div[1]/div[2]/div/table/tbody/tr[1]/td[1]") {
+            //            for link in doc.xpath("/html/body") {
+            //                print(link.text)
+            //                print(link["href"])
+            //            }
+            
+            for link in doc.css("table, tbody, tr") {
+                print(link.text)
+              //print(link["strong"])
+                let text = link.text! as String
+                self.dataList.append(text)
+                self.reloadDataList()
+            }
+
+        }
+    }
+    
+    func reloadDataList(){
+        dispatch_async(dispatch_get_main_queue()) {
+            self.tableView.reloadData()
+            return
+        }
     }
 
 
