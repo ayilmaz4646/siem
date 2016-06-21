@@ -24,27 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "mycell")
         dataList = ["ses", "ddddd"]
-//        htmlParserWithKanna("http://www.elreha.de/technische-handbucher-archiv/")
-        if let doc = Kanna.HTML(url: (NSURL(string: "http://www.elreha.de/technische-handbucher-archiv/")!), encoding: NSUTF8StringEncoding) {
-            
-            // Search for nodes by XPath
-            //            for link in doc.xpath("/html/body/section/div/section/article/div[1]/div[2]/div/table/tbody/tr[1]/td[1]") {
-            //            for link in doc.xpath("/html/body") {
-            //                print(link.text)
-            //                print(link["href"])
-            //            }
-            
-            for link in doc.css("table, tbody, tr, td, strong") {
-                print(link.text)
-                //let text = link.text
-                dataParse += link.text!.componentsSeparatedByString(" ")
-            }
-            print("DATA =", dataParse)
-            
-            self.dataList = dataParse
-            self.tableView.reloadData()
-        }
-
+        htmlParserWithKanna("http://www.elreha.de/technische-handbucher-archiv/")
         
     }
     
@@ -73,21 +53,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if let doc = Kanna.HTML(url: (NSURL(string: url)!), encoding: NSUTF8StringEncoding) {
             
-            // Search for nodes by XPath
-            //            for link in doc.xpath("/html/body/section/div/section/article/div[1]/div[2]/div/table/tbody/tr[1]/td[1]") {
-            //            for link in doc.xpath("/html/body") {
-            //                print(link.text)
-            //                print(link["href"])
-            //            }
+             //Search for nodes by XPath
+                        //for link in doc.xpath("//td[@class='views-field views-field-field-test']") {
+                        for link in doc.xpath("//td[@class='column-1']") {
+                            print(link.text)
+                            //print(link["href"])
+                            //let text = link.text
+                            dataParse += link.text!.componentsSeparatedByString("")
+                        }
             
-            for link in doc.css("table, tbody, tr") {
-                print(link.text)
-              //print(link["strong"])
-                let text = link.text! as String
-                self.dataList.append(text)
-                self.reloadDataList()
-            }
-
+//            for link in doc.css("table, tbody, tr, td, strong") {
+//                print(link.text)
+//                //let text = link.text
+//                dataParse += link.text!.componentsSeparatedByString(" ")
+//            }
+            print("DATA =", dataParse)
+            
+            self.dataList = dataParse
+            self.tableView.reloadData()
         }
     }
     
