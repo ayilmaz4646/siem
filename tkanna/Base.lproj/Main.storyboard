@@ -15,15 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IQc-cW-mFn">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g8e-nP-F1x">
-                                <rect key="frame" x="0.0" y="72" width="320" height="496"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="408"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mycell" id="nl6-rl-jwt">
@@ -33,6 +29,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="kHi-ok-K3z" kind="show" identifier="detailssegue" id="aZd-qF-zNE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -40,20 +39,24 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="uHm-pR-3rD"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IQc-cW-mFn">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="g8e-nP-F1x" secondAttribute="bottom" id="DyU-cR-fce"/>
-                            <constraint firstItem="g8e-nP-F1x" firstAttribute="top" secondItem="IQc-cW-mFn" secondAttribute="bottom" id="J64-wX-v6F"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="g8e-nP-F1x" secondAttribute="trailing" constant="-20" id="TUI-zZ-WGa"/>
-                            <constraint firstItem="g8e-nP-F1x" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="cA9-na-EjH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="IQc-cW-mFn" secondAttribute="trailing" constant="-20" id="geb-oV-gX8"/>
-                            <constraint firstItem="IQc-cW-mFn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="m4D-ta-nAB"/>
-                            <constraint firstItem="IQc-cW-mFn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="mZ2-Xr-2UQ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IQc-cW-mFn" secondAttribute="bottom" constant="496" id="u5x-xN-bY8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="g8e-nP-F1x" secondAttribute="bottom" id="AEj-pj-Vzq"/>
+                            <constraint firstItem="g8e-nP-F1x" firstAttribute="top" secondItem="IQc-cW-mFn" secondAttribute="bottom" constant="8" id="Kzb-4z-q2N"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g8e-nP-F1x" secondAttribute="trailing" constant="-20" id="QrM-S8-KkP"/>
+                            <constraint firstItem="g8e-nP-F1x" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="R6M-0d-obd"/>
+                            <constraint firstItem="IQc-cW-mFn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="e9T-o3-NZ3"/>
+                            <constraint firstItem="g8e-nP-F1x" firstAttribute="top" secondItem="IQc-cW-mFn" secondAttribute="bottom" constant="8" id="mSp-mW-IFH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IQc-cW-mFn" secondAttribute="trailing" constant="-20" id="vcP-N9-3z2"/>
+                            <constraint firstItem="IQc-cW-mFn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="zFt-df-6Ir"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="IQc-cW-mFn" id="pyc-cy-EYb"/>
                         <outlet property="tableView" destination="g8e-nP-F1x" id="L1x-FR-SHE"/>
@@ -62,6 +65,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="301" y="-5"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="tQT-U4-GBV">
+            <objects>
+                <viewController storyboardIdentifier="detailsViewController" id="kHi-ok-K3z" customClass="detailsViewController" customModule="tkanna" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yIE-K7-Vwh"/>
+                        <viewControllerLayoutGuide type="bottom" id="un9-2Q-xPz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="V06-oz-QI6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qpn-Qe-u7A">
+                                <rect key="frame" x="20" y="77" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="title" destination="Qpn-Qe-u7A" id="rJL-Cl-g2Z"/>
+                        <outlet property="ttitle" destination="Qpn-Qe-u7A" id="ZnS-K6-3Ch"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6qF-m3-Mma" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="705" y="-5"/>
         </scene>
     </scenes>
 </document>

@@ -16,6 +16,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     var dataList = [String]()
     var dataParse = [String]()
+    var linkTitle = NSMutableString()
+    var link = NSMutableString()
+    var dataList2 = NSMutableArray()
+    var dataParse2 = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,35 +47,69 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCellWithIdentifier("mycell")! as UITableViewCell
         //let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "mycell")
         cell.textLabel?.text = dataList[indexPath.row]
+        //cell.textLabel?.text = dataList2.objectAtIndex(indexPath.row) as? NSString as? String
         
         return cell
     
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let detailsVC = storyboard?.instantiateViewControllerWithIdentifier("detailsViewController") as! detailsViewController
+        detailsVC.select(dataList[indexPath.row])
+        
+        
+    }
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "detailssegue"
+//        {
+//            
+//            var indexpath: NSIndexPath? = nil
+//            indexpath = tableView.indexPathForSelectedRow!
+//            if let destinationVC = segue.destinationViewController as? detailsViewController {
+//                destinationVC.ttitle = dataList[]
+//            }
+//            
+//        }
+//        
+//    }
+
+    
     func htmlParserWithKanna(url:String)
     {
         
         if let doc = Kanna.HTML(url: (NSURL(string: url)!), encoding: NSUTF8StringEncoding) {
-            
-             //Search for nodes by XPath
-                        //for link in doc.xpath("//td[@class='views-field views-field-field-test']") {
-                        for link in doc.xpath("//td[@class='column-1']") {
-                            print(link.text)
-                            //print(link["href"])
-                            //let text = link.text
-                            dataParse += link.text!.componentsSeparatedByString("")
-                        }
-            
-//            for link in doc.css("table, tbody, tr, td, strong") {
-//                print(link.text)
-//                //let text = link.text
-//                dataParse += link.text!.componentsSeparatedByString(" ")
-//            }
-            print("DATA =", dataParse)
+            for tbl_tr in doc.xpath("//table[@id='tablepress-4']/tbody/tr") {
+
+                let link_label = tbl_tr.css("td:nth-child(1)").text
+                let link_url   = tbl_tr.xpath("td[@class='column-2']/a/@href").text
+                
+            //for link in doc.xpath("//td[@class='column-1']") {
+                print("Geldiii...")
+                print(link_label)
+                print(link_url)
+                //print(link["href"])
+                //let text = link.text
+                //dataParse += link.text!.componentsSeparatedByString("")
+                //dataParse2.addObject(link.text!.componentsSeparatedByString(""))
+                //dataParse2 += link.text!.componentsSeparatedByString("")
+                //dataParse2.insertObject(link.text!.componentsSeparatedByString(""), atIndex: 1)
+            }
+            print("DATA =", dataParse2)
+            //print("DATA =", dataParse2)
             
             self.dataList = dataParse
-            self.tableView.reloadData()
+            //self.dataList2 = dataParse2
+            //self.tableView.reloadData()
+
+//            for link in doc.xpath("//td[@class='column-2']/a/@href") {
+//                print(link.text)
+//                //print(link["a href"])
+//            }
         }
+        
+        
     }
     
     func reloadDataList(){
