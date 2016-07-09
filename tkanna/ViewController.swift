@@ -14,7 +14,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
 
-    var dataList = [String]()
+    var dataNameList = [String]()
+    var dataLinkList = [String]()
     var dataParse = [String]()
     var linkTitle = NSMutableString()
     var link = NSMutableString()
@@ -23,11 +24,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        searchBar.delegate = self
-        tableView.dataSource = self
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "mycell")
-        dataList = ["ses", "ddddd"]
+//        tableView.delegate = self
+//        searchBar.delegate = self
+//        tableView.dataSource = self
+//        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "mycell")
+//        dataNameList = ["ses", "ddddd"]
+//        dataLinkList = ["llll", "iiii"]
         htmlParserWithKanna("http://www.elreha.de/technische-handbucher-archiv/")
         
     }
@@ -39,42 +41,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return dataList.count
+        return dataNameList.count
     }
     
     internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("mycell")! as UITableViewCell
         //let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "mycell")
-        cell.textLabel?.text = dataList[indexPath.row]
+        cell.textLabel?.text = dataNameList[indexPath.row]
+        cell.detailTextLabel?.text = dataLinkList[indexPath.row]
         //cell.textLabel?.text = dataList2.objectAtIndex(indexPath.row) as? NSString as? String
         
         return cell
     
     }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        let detailsVC = storyboard?.instantiateViewControllerWithIdentifier("detailsViewController") as! detailsViewController
-        detailsVC.select(dataList[indexPath.row])
-        
-        
-    }
-    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "detailssegue"
-//        {
-//            
-//            var indexpath: NSIndexPath? = nil
-//            indexpath = tableView.indexPathForSelectedRow!
-//            if let destinationVC = segue.destinationViewController as? detailsViewController {
-//                destinationVC.ttitle = dataList[]
-//            }
-//            
-//        }
-//        
-//    }
-
     
     func htmlParserWithKanna(url:String)
     {
@@ -84,29 +64,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
                 let link_label = tbl_tr.css("td:nth-child(1)").text
                 let link_url   = tbl_tr.xpath("td[@class='column-2']/a/@href").text
-                
-            //for link in doc.xpath("//td[@class='column-1']") {
+
+                if ((link_url) != ""){
+                    print("Url Geldiii...")
+                    dataNameList += link_label!.componentsSeparatedByString("")
+                    dataLinkList += link_url!.componentsSeparatedByString("")
+                }
                 print("Geldiii...")
                 print(link_label)
                 print(link_url)
-                //print(link["href"])
-                //let text = link.text
-                //dataParse += link.text!.componentsSeparatedByString("")
-                //dataParse2.addObject(link.text!.componentsSeparatedByString(""))
-                //dataParse2 += link.text!.componentsSeparatedByString("")
-                //dataParse2.insertObject(link.text!.componentsSeparatedByString(""), atIndex: 1)
+                //dataList2.insertObject(link_label!, atIndex: 0)
             }
-            print("DATA =", dataParse2)
-            //print("DATA =", dataParse2)
+//            print("DATA =", dataList2)
             
-            self.dataList = dataParse
-            //self.dataList2 = dataParse2
-            //self.tableView.reloadData()
-
-//            for link in doc.xpath("//td[@class='column-2']/a/@href") {
-//                print(link.text)
-//                //print(link["a href"])
-//            }
+            //self.dataList.append(dataList2.componentsJoinedByString(""))
         }
         
         
