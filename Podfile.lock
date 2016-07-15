@@ -1,12 +1,15 @@
 PODS:
+  - Alamofire (3.4.1)
   - Kanna (1.0.6)
 
 DEPENDENCIES:
+  - Alamofire (~> 3.4)
   - Kanna (~> 1.0.0)
 
 SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   Kanna: 9f30945bbd293a609f698ea164687ccc0990ff60
 
-PODFILE CHECKSUM: 3e9190b109ac16b92971fb4a54b56a28a6bf7528
+PODFILE CHECKSUM: c203585021d38f006c98322eb70d9a712cfbaa45
 
 COCOAPODS: 1.0.1

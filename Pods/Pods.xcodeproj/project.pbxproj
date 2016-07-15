@@ -9,42 +9,73 @@
 /* Begin PBXBuildFile section */
 		01E4E9210035CE571CC4576D9E355A6E /* Pods-tkannaUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 244ACE2D03F496717AC9382FE849D3BA /* Pods-tkannaUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08D9123076288B1D3E88387197C5E8C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		095406039B4D371E48D08B38A2975AC8 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC27A502179588D8D0ABB36B41B2A500 /* Error.swift */; };
+		16102E4E35FAA0FC4161282FECE56469 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B213BFF6CCA49251C1CDBD7BF020E1B /* Timeline.swift */; };
 		19AC8D07E34AE023FDFF4E88708A7CB1 /* Pods-tkannaTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 25609CA440A4801B5F20F066D7096AF0 /* Pods-tkannaTests-dummy.m */; };
-		2212F76360C4B07896BFF74DF04894D8 /* Pods-tkanna-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B3AB9F70767A68E2E3A79605895580C /* Pods-tkanna-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		33AFFE0825E74D085585A5444E3A05EC /* Kanna-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CF4E3EF5061E0D49507CD7EFDEE327 /* Kanna-dummy.m */; };
-		395EB90F99C1B4455D5473D35CC5BD5E /* Kanna-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B5EEE5B3B167AB38604617B84011FB5 /* Kanna-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3B8EBDC7D46375322C2614DCE43B384E /* Pods-tkanna-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B0819A07DBCBDCD66683A10675687C0D /* Pods-tkanna-dummy.m */; };
-		44F6D065A38113FB7F678A2EAD9543A3 /* libxmlParserOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8769DB6B6A36CEA2D831B4C58EC37C5 /* libxmlParserOption.swift */; };
-		4DDB0778AE2D6DE72E791D2857790B6A /* libxmlHTMLDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7591D6DB95B1B35A067233078F31D9A /* libxmlHTMLDocument.swift */; };
+		1C63FCD302630BD2767D8FAB7AA221FD /* Pods-tkanna-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B0819A07DBCBDCD66683A10675687C0D /* Pods-tkanna-dummy.m */; };
+		2D3405986FC586FA6C0A5E0B6BA7E64E /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92BB99A5D1ACA1DA00D048FC18E4BFE /* Validation.swift */; };
+		33AFFE0825E74D085585A5444E3A05EC /* Kanna-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E831B42D792F413E3E3CC4C39769E8A3 /* Kanna-dummy.m */; };
+		34CCDCA848A701466256BC2927DA8856 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDB1661A451077C722047519BB9A14E /* NetworkReachabilityManager.swift */; };
+		395EB90F99C1B4455D5473D35CC5BD5E /* Kanna-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EED91057031158398B2AC71304460530 /* Kanna-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3EA8F215C9C1432D74E5CCA4834AA8C0 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E28C41A902FE0836B03EF193879F4F8 /* ResponseSerialization.swift */; };
+		4081EA628AF0B73AC51FFB9D7AB3B89E /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE15D58206EC3F5D9E23035D2AC6D730 /* Manager.swift */; };
+		44F6D065A38113FB7F678A2EAD9543A3 /* libxmlParserOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CB114F439200C77E47FBD18D4B3EBB /* libxmlParserOption.swift */; };
+		4DDB0778AE2D6DE72E791D2857790B6A /* libxmlHTMLDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84FE34CD15F8DCB5ABB69E7696589B0 /* libxmlHTMLDocument.swift */; };
+		55E50D8B401C03AA45E16379CB0C4FC1 /* Pods-tkanna-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B3AB9F70767A68E2E3A79605895580C /* Pods-tkanna-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5AAD232B9DA128B8E3412982D2EF3032 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		5BC19E6E0F199276003F0AF96838BCE5 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD11B041CA05AF4966AEDD9654C70E9 /* Upload.swift */; };
+		5CB05FBCB32D21E194B5ECF680CB6AE0 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3DD2F6D0A084D5C17A7282A6AAF51 /* Download.swift */; };
+		62E8346F03C03E7F4D631361F325689E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC070504326A2E781F22E514A8318D0E /* Response.swift */; };
 		6D63B08894FD14C11DDABEC9F0C96C80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		7B48852C4D848FA2DA416A98F6425869 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D91447496985E1AA17346C2EA3C00C /* ServerTrustPolicy.swift */; };
 		8E2170B09A5FE7ED0E1EF6D22DE24A42 /* Pods-tkannaTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5827D28A5D028C39ECB9282E07319334 /* Pods-tkannaTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9A1F90DCD124DC39CB400E77A9BFCD90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		8EB11202167FCDDF1257AAAB1D1FB244 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7515E03C86CFE36DF75F5EDEB3C28D16 /* Alamofire.swift */; };
+		91C09AC2A52ED69A27C8D923139A006F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		9469DF81ECB494E84675969B5E13374C /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C6935070059D273173DFACE37C3F077 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A82431B78B5390CBD0207CBC3FBFE815 /* Pods-tkannaUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14432EA454A2208C09CA1F099F73BD74 /* Pods-tkannaUITests-dummy.m */; };
-		B32C989472A35B49F57643156C80ADD9 /* Kanna.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785A8BA1845F0D3FE0EE6F983B7B56C /* Kanna.swift */; };
-		BAEC8D6C7A1ED015A2E294638369DFE5 /* CSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DEC6A4DA9E26012F6AEAFCE800BF02 /* CSS.swift */; };
-		BC39AA79F022D17F32F08EA318CEA48A /* libxmlHTMLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF06002BBE64EBC1A01778D11701374E /* libxmlHTMLNode.swift */; };
+		AA314156AC500125F4078EE968DB14C6 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654DFF4E7A18DB15A0421AEA42EED333 /* Result.swift */; };
+		ADF19C953CE2A7D0B72EC93A81FCCC26 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6428D8C847751F7005C842D12199815 /* Alamofire-dummy.m */; };
+		AE4CF87C02C042DF13ED5B21C4FDC1E0 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3DD0C8DCFC8C0D52D41E3D5A2C6E7B /* Stream.swift */; };
+		B32C989472A35B49F57643156C80ADD9 /* Kanna.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6748B6D44A53B5FD4F152FD4808BE9 /* Kanna.swift */; };
+		BAEC8D6C7A1ED015A2E294638369DFE5 /* CSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5478D7833BAE600C55E3B001DBF8BD /* CSS.swift */; };
+		BC39AA79F022D17F32F08EA318CEA48A /* libxmlHTMLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F62AEFAE8C39103E09540DBAAC590F8 /* libxmlHTMLNode.swift */; };
+		BE41196F6A3903E59C3306FE3F8B43FE /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8BA595A05A52C6CF9D9E692C09FEE /* Notifications.swift */; };
+		C0DB70AB368765DC64BFB5FEA75E0696 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5A52F917AA926DA33E2D530203B39 /* ParameterEncoding.swift */; };
+		C7B6DD7C0456C50289A2C381DFE9FA3F /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FD18B1743314252C3C5B15F0B72C81 /* MultipartFormData.swift */; };
+		CCFAB3885A7371D31A160ADB8152D511 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		EFE92E8D3813DD26E78E93EEAF6D7E7E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4F8EBE78A93B11B44438122F4994BE /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DA2CFF52C09AE9A075B994180D049119 /* PBXContainerItemProxy */ = {
+		00E5C33610FF4D5783EC6478CE1D823F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B6312CAD7E18804AD5E11308495CFD52;
 			remoteInfo = Kanna;
 		};
+		3A816D847407D10673E891713CEA6459 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79C040AFDDCE1BCBF6D8B5EB0B85887F;
+			remoteInfo = Alamofire;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06394D36565E4EF684D2002FC4B5A94F /* Kanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kanna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		082E7E61E3A213D05333E781102A1B3A /* Pods-tkanna-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tkanna-frameworks.sh"; sourceTree = "<group>"; };
 		09FD8CD060B3AB1425813CF4EDDF6569 /* Pods-tkannaUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-tkannaUITests.modulemap"; sourceTree = "<group>"; };
+		0AD11B041CA05AF4966AEDD9654C70E9 /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
 		0DE769323524307AFC292E3061C629B5 /* Pods-tkannaTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tkannaTests-resources.sh"; sourceTree = "<group>"; };
-		10DEC6A4DA9E26012F6AEAFCE800BF02 /* CSS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CSS.swift; path = Sources/CSS.swift; sourceTree = "<group>"; };
+		0F62AEFAE8C39103E09540DBAAC590F8 /* libxmlHTMLNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = libxmlHTMLNode.swift; path = Sources/libxmlHTMLNode.swift; sourceTree = "<group>"; };
 		14432EA454A2208C09CA1F099F73BD74 /* Pods-tkannaUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tkannaUITests-dummy.m"; sourceTree = "<group>"; };
+		1572CDC6690E07EE1FCA0920F4C9AF43 /* Kanna-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kanna-prefix.pch"; sourceTree = "<group>"; };
 		1B1050E504BDC046FA8D83782646E382 /* Pods-tkannaTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tkannaTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		1B5EEE5B3B167AB38604617B84011FB5 /* Kanna-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kanna-umbrella.h"; sourceTree = "<group>"; };
+		1B1D67926674A7778594162B49A16776 /* Kanna.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kanna.xcconfig; sourceTree = "<group>"; };
+		1B213BFF6CCA49251C1CDBD7BF020E1B /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
+		1DD4CDB77D8B79E0B8B7E07E6847F74D /* Kanna.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Kanna.modulemap; sourceTree = "<group>"; };
+		22D3DD2F6D0A084D5C17A7282A6AAF51 /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
 		244ACE2D03F496717AC9382FE849D3BA /* Pods-tkannaUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-tkannaUITests-umbrella.h"; sourceTree = "<group>"; };
 		247BDF688D72F4E5FB6921E4A6985A9B /* Pods-tkannaUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tkannaUITests-frameworks.sh"; sourceTree = "<group>"; };
 		25609CA440A4801B5F20F066D7096AF0 /* Pods-tkannaTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tkannaTests-dummy.m"; sourceTree = "<group>"; };
@@ -54,34 +85,54 @@
 		38CCDB32A3008F428CD4F6448E278C68 /* Pods-tkannaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tkannaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3FC2D2AAA4AEE229A04A545A8A4BBDC6 /* Pods-tkannaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tkannaTests.release.xcconfig"; sourceTree = "<group>"; };
 		4A444A264D0E54707666DCA8E41B6F52 /* Pods-tkannaUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tkannaUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4DA5A52F917AA926DA33E2D530203B39 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		4F313B2AF75C801CDF9530D62881AA7B /* Pods-tkanna-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tkanna-acknowledgements.plist"; sourceTree = "<group>"; };
+		55C741E46FE4307928B32C748091BE0B /* Pods_tkanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tkanna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5827D28A5D028C39ECB9282E07319334 /* Pods-tkannaTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-tkannaTests-umbrella.h"; sourceTree = "<group>"; };
-		598C8EC37F1F7905C419B35ACE2D62EA /* Pods_tkannaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tkannaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C285029BDC87776C5D7E41CE1E6AAF6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6785A8BA1845F0D3FE0EE6F983B7B56C /* Kanna.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kanna.swift; path = Sources/Kanna.swift; sourceTree = "<group>"; };
+		5E28C41A902FE0836B03EF193879F4F8 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		654DFF4E7A18DB15A0421AEA42EED333 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
+		682D881F388DFACAC1DBAC2ACD2FDC54 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		6C6935070059D273173DFACE37C3F077 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		74164B5DAFF9660EA6452DFFACCF1DA1 /* Pods-tkanna.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tkanna.debug.xcconfig"; sourceTree = "<group>"; };
+		7515E03C86CFE36DF75F5EDEB3C28D16 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
 		7B36EF5BAD0BA48E1EC17E215764113E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B3AB9F70767A68E2E3A79605895580C /* Pods-tkanna-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-tkanna-umbrella.h"; sourceTree = "<group>"; };
 		7C20A4FE6EEAF7E267560F7FE49C0DE4 /* Pods-tkannaUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tkannaUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		86C6AD2DE76A63EF49C1CE0DF6F85A2A /* Pods_tkannaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tkannaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83CB114F439200C77E47FBD18D4B3EBB /* libxmlParserOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = libxmlParserOption.swift; path = Sources/libxmlParserOption.swift; sourceTree = "<group>"; };
 		8C9EAA0F6E2375CF7F6F0155CAFB6C19 /* Pods-tkannaTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-tkannaTests.modulemap"; sourceTree = "<group>"; };
+		8E6748B6D44A53B5FD4F152FD4808BE9 /* Kanna.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kanna.swift; path = Sources/Kanna.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		99CF4E3EF5061E0D49507CD7EFDEE327 /* Kanna-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kanna-dummy.m"; sourceTree = "<group>"; };
-		A6BC3E162CCE05455901EF008243A3CA /* Kanna-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kanna-prefix.pch"; sourceTree = "<group>"; };
+		A3D45C17F41AF730AB57E323003A1B2A /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
+		A8026728BB8A7F52B4E9F3F76979E246 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9FD18B1743314252C3C5B15F0B72C81 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
+		ABC0D8DE6823F18A689F11995C805806 /* Kanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kanna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC27A502179588D8D0ABB36B41B2A500 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Source/Error.swift; sourceTree = "<group>"; };
+		AF3DD0C8DCFC8C0D52D41E3D5A2C6E7B /* Stream.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stream.swift; path = Source/Stream.swift; sourceTree = "<group>"; };
 		B0819A07DBCBDCD66683A10675687C0D /* Pods-tkanna-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tkanna-dummy.m"; sourceTree = "<group>"; };
-		BF06002BBE64EBC1A01778D11701374E /* libxmlHTMLNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = libxmlHTMLNode.swift; path = Sources/libxmlHTMLNode.swift; sourceTree = "<group>"; };
-		C18062056E42804DD105D0B625E4C0F5 /* Kanna.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Kanna.modulemap; sourceTree = "<group>"; };
+		BB00325C4BCF5C8C9F787E42FFB575CD /* Pods_tkannaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tkannaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB38798D03F5B026B7229FFD8707B21A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC070504326A2E781F22E514A8318D0E /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		C3D91447496985E1AA17346C2EA3C00C /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CEF29A5186CC53F7AA8758F726FFF6DC /* Pods-tkannaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tkannaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CF4F8EBE78A93B11B44438122F4994BE /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		CFA8BA595A05A52C6CF9D9E692C09FEE /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
 		D0267DAC666C8AFF79041726BEBCBD04 /* Pods-tkanna.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-tkanna.modulemap"; sourceTree = "<group>"; };
 		D028E1A294C9CA4A41952149A4E69DAC /* Pods-tkanna.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tkanna.release.xcconfig"; sourceTree = "<group>"; };
-		D8769DB6B6A36CEA2D831B4C58EC37C5 /* libxmlParserOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = libxmlParserOption.swift; path = Sources/libxmlParserOption.swift; sourceTree = "<group>"; };
 		DE3DD11CC7059FB95351FC966D9125E2 /* Pods-tkannaTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tkannaTests-frameworks.sh"; sourceTree = "<group>"; };
-		E84C19D37450A3E08C6CFBE085700080 /* Pods_tkanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tkanna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E009848776B2C2A4E81F62E1EA63FED6 /* Pods_tkannaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tkannaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E831B42D792F413E3E3CC4C39769E8A3 /* Kanna-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kanna-dummy.m"; sourceTree = "<group>"; };
 		EA8B796C6E649F7C7F2AD81897A141BB /* Pods-tkanna-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tkanna-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EDD1BC9E9DE30B505C975153B2CD964B /* Kanna.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kanna.xcconfig; sourceTree = "<group>"; };
-		F3DF7010F06E7EEFC4610B3EACB1030E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F7591D6DB95B1B35A067233078F31D9A /* libxmlHTMLDocument.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = libxmlHTMLDocument.swift; path = Sources/libxmlHTMLDocument.swift; sourceTree = "<group>"; };
+		ECDB1661A451077C722047519BB9A14E /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		EE15D58206EC3F5D9E23035D2AC6D730 /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
+		EED91057031158398B2AC71304460530 /* Kanna-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kanna-umbrella.h"; sourceTree = "<group>"; };
+		F6428D8C847751F7005C842D12199815 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		F7F3814151B55CE17696E33D1997EBCD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F84FE34CD15F8DCB5ABB69E7696589B0 /* libxmlHTMLDocument.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = libxmlHTMLDocument.swift; path = Sources/libxmlHTMLDocument.swift; sourceTree = "<group>"; };
+		F92BB99A5D1ACA1DA00D048FC18E4BFE /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		FC1C6099195D03366373DCBC41ABBF5E /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		FD5478D7833BAE600C55E3B001DBF8BD /* CSS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CSS.swift; path = Sources/CSS.swift; sourceTree = "<group>"; };
 		FF186BBF54BC2B954ED78A2A34B9CC2B /* Pods-tkannaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tkannaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FF53EEA908197C5A5EF12B512A01B87A /* Pods-tkannaTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tkannaTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,19 +146,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1C453B59BD40278E71989E611CF068D1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9A1F90DCD124DC39CB400E77A9BFCD90 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4535435B3BDF6BB7E43208DDDD331AE4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6D63B08894FD14C11DDABEC9F0C96C80 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1729F851F648EC60EE93CDB3C8BAEAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91C09AC2A52ED69A27C8D923139A006F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2DC7B01CBA977298AB94A885FDF62A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCFAB3885A7371D31A160ADB8152D511 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,28 +181,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1DE1CFC5AD07C9E86531BD51719F1B86 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				F3DF7010F06E7EEFC4610B3EACB1030E /* Info.plist */,
-				C18062056E42804DD105D0B625E4C0F5 /* Kanna.modulemap */,
-				EDD1BC9E9DE30B505C975153B2CD964B /* Kanna.xcconfig */,
-				99CF4E3EF5061E0D49507CD7EFDEE327 /* Kanna-dummy.m */,
-				A6BC3E162CCE05455901EF008243A3CA /* Kanna-prefix.pch */,
-				1B5EEE5B3B167AB38604617B84011FB5 /* Kanna-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Kanna";
-			sourceTree = "<group>";
-		};
-		27539D2683B38C9181A1C088A4365341 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C445415F9787550778C66C236E8DCB82 /* Kanna */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		38C079FA3D6835F1A1155E835CE9C84E /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,15 +199,102 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		4E45724927902D3D4323F62CBBD590CA /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				7515E03C86CFE36DF75F5EDEB3C28D16 /* Alamofire.swift */,
+				22D3DD2F6D0A084D5C17A7282A6AAF51 /* Download.swift */,
+				AC27A502179588D8D0ABB36B41B2A500 /* Error.swift */,
+				EE15D58206EC3F5D9E23035D2AC6D730 /* Manager.swift */,
+				A9FD18B1743314252C3C5B15F0B72C81 /* MultipartFormData.swift */,
+				ECDB1661A451077C722047519BB9A14E /* NetworkReachabilityManager.swift */,
+				CFA8BA595A05A52C6CF9D9E692C09FEE /* Notifications.swift */,
+				4DA5A52F917AA926DA33E2D530203B39 /* ParameterEncoding.swift */,
+				CF4F8EBE78A93B11B44438122F4994BE /* Request.swift */,
+				BC070504326A2E781F22E514A8318D0E /* Response.swift */,
+				5E28C41A902FE0836B03EF193879F4F8 /* ResponseSerialization.swift */,
+				654DFF4E7A18DB15A0421AEA42EED333 /* Result.swift */,
+				C3D91447496985E1AA17346C2EA3C00C /* ServerTrustPolicy.swift */,
+				AF3DD0C8DCFC8C0D52D41E3D5A2C6E7B /* Stream.swift */,
+				1B213BFF6CCA49251C1CDBD7BF020E1B /* Timeline.swift */,
+				0AD11B041CA05AF4966AEDD9654C70E9 /* Upload.swift */,
+				F92BB99A5D1ACA1DA00D048FC18E4BFE /* Validation.swift */,
+				8DA5F5E3FDD56F65E1858A1673DA9A18 /* Support Files */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		54BEBFDA4B3A50CAA29597192FDF57ED /* Kanna */ = {
+			isa = PBXGroup;
+			children = (
+				FD5478D7833BAE600C55E3B001DBF8BD /* CSS.swift */,
+				8E6748B6D44A53B5FD4F152FD4808BE9 /* Kanna.swift */,
+				F84FE34CD15F8DCB5ABB69E7696589B0 /* libxmlHTMLDocument.swift */,
+				0F62AEFAE8C39103E09540DBAAC590F8 /* libxmlHTMLNode.swift */,
+				83CB114F439200C77E47FBD18D4B3EBB /* libxmlParserOption.swift */,
+				75DFF23FD4524733A43EA23639BAD759 /* Support Files */,
+			);
+			path = Kanna;
+			sourceTree = "<group>";
+		};
+		562C103E6EE009929E979C6FE41FC032 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E45724927902D3D4323F62CBBD590CA /* Alamofire */,
+				54BEBFDA4B3A50CAA29597192FDF57ED /* Kanna */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		75DFF23FD4524733A43EA23639BAD759 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F7F3814151B55CE17696E33D1997EBCD /* Info.plist */,
+				1DD4CDB77D8B79E0B8B7E07E6847F74D /* Kanna.modulemap */,
+				1B1D67926674A7778594162B49A16776 /* Kanna.xcconfig */,
+				E831B42D792F413E3E3CC4C39769E8A3 /* Kanna-dummy.m */,
+				1572CDC6690E07EE1FCA0920F4C9AF43 /* Kanna-prefix.pch */,
+				EED91057031158398B2AC71304460530 /* Kanna-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Kanna";
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				27539D2683B38C9181A1C088A4365341 /* Pods */,
-				E24B655FAE5B51D44F94D2BC44957B85 /* Products */,
+				562C103E6EE009929E979C6FE41FC032 /* Pods */,
+				7E32250B56EB1AB29431560571F007E8 /* Products */,
 				38C079FA3D6835F1A1155E835CE9C84E /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		7E32250B56EB1AB29431560571F007E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A8026728BB8A7F52B4E9F3F76979E246 /* Alamofire.framework */,
+				ABC0D8DE6823F18A689F11995C805806 /* Kanna.framework */,
+				55C741E46FE4307928B32C748091BE0B /* Pods_tkanna.framework */,
+				E009848776B2C2A4E81F62E1EA63FED6 /* Pods_tkannaTests.framework */,
+				BB00325C4BCF5C8C9F787E42FFB575CD /* Pods_tkannaUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8DA5F5E3FDD56F65E1858A1673DA9A18 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				682D881F388DFACAC1DBAC2ACD2FDC54 /* Alamofire.modulemap */,
+				A3D45C17F41AF730AB57E323003A1B2A /* Alamofire.xcconfig */,
+				F6428D8C847751F7005C842D12199815 /* Alamofire-dummy.m */,
+				FC1C6099195D03366373DCBC41ABBF5E /* Alamofire-prefix.pch */,
+				6C6935070059D273173DFACE37C3F077 /* Alamofire-umbrella.h */,
+				BB38798D03F5B026B7229FFD8707B21A /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Alamofire";
 			sourceTree = "<group>";
 		};
 		92C03762BD829E19183A4CAF87ED4031 /* Pods-tkanna */ = {
@@ -217,19 +341,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C445415F9787550778C66C236E8DCB82 /* Kanna */ = {
-			isa = PBXGroup;
-			children = (
-				10DEC6A4DA9E26012F6AEAFCE800BF02 /* CSS.swift */,
-				6785A8BA1845F0D3FE0EE6F983B7B56C /* Kanna.swift */,
-				F7591D6DB95B1B35A067233078F31D9A /* libxmlHTMLDocument.swift */,
-				BF06002BBE64EBC1A01778D11701374E /* libxmlHTMLNode.swift */,
-				D8769DB6B6A36CEA2D831B4C58EC37C5 /* libxmlParserOption.swift */,
-				1DE1CFC5AD07C9E86531BD51719F1B86 /* Support Files */,
-			);
-			path = Kanna;
-			sourceTree = "<group>";
-		};
 		C7FF8B9B8327E81175CE55C0C1DA5E12 /* Pods-tkannaTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,17 +357,6 @@
 			);
 			name = "Pods-tkannaTests";
 			path = "Target Support Files/Pods-tkannaTests";
-			sourceTree = "<group>";
-		};
-		E24B655FAE5B51D44F94D2BC44957B85 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				06394D36565E4EF684D2002FC4B5A94F /* Kanna.framework */,
-				E84C19D37450A3E08C6CFBE085700080 /* Pods_tkanna.framework */,
-				598C8EC37F1F7905C419B35ACE2D62EA /* Pods_tkannaTests.framework */,
-				86C6AD2DE76A63EF49C1CE0DF6F85A2A /* Pods_tkannaUITests.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,11 +386,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B5AAEC5A6C27CFC23BECC7EE3A7DC56E /* Headers */ = {
+		D5A8D6FE691488C810AEC9A4785BB344 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2212F76360C4B07896BFF74DF04894D8 /* Pods-tkanna-umbrella.h in Headers */,
+				55E50D8B401C03AA45E16379CB0C4FC1 /* Pods-tkanna-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFDF3B631BBB965A372347705CA14854 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9469DF81ECB494E84675969B5E13374C /* Alamofire-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,25 +419,24 @@
 			);
 			name = "Pods-tkannaUITests";
 			productName = "Pods-tkannaUITests";
-			productReference = 86C6AD2DE76A63EF49C1CE0DF6F85A2A /* Pods_tkannaUITests.framework */;
+			productReference = BB00325C4BCF5C8C9F787E42FFB575CD /* Pods_tkannaUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		730E41754350A4EF6958890151EE3BA9 /* Pods-tkanna */ = {
+		79C040AFDDCE1BCBF6D8B5EB0B85887F /* Alamofire */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA0846AD6349C44CCAAD21B98C784550 /* Build configuration list for PBXNativeTarget "Pods-tkanna" */;
+			buildConfigurationList = 3CFB42910790CF0BDBCCEBAACD6B9367 /* Build configuration list for PBXNativeTarget "Alamofire" */;
 			buildPhases = (
-				5FBB8A878C1DE7E3E6282EA1EA6FB16D /* Sources */,
-				1C453B59BD40278E71989E611CF068D1 /* Frameworks */,
-				B5AAEC5A6C27CFC23BECC7EE3A7DC56E /* Headers */,
+				95CC2C7E06DC188A05DAAEE9CAA555A3 /* Sources */,
+				B1729F851F648EC60EE93CDB3C8BAEAD /* Frameworks */,
+				EFDF3B631BBB965A372347705CA14854 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CAD9ADE94DF23C7621D4E5011C564DF6 /* PBXTargetDependency */,
 			);
-			name = "Pods-tkanna";
-			productName = "Pods-tkanna";
-			productReference = E84C19D37450A3E08C6CFBE085700080 /* Pods_tkanna.framework */;
+			name = Alamofire;
+			productName = Alamofire;
+			productReference = A8026728BB8A7F52B4E9F3F76979E246 /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A3010565DD050E8CDF14806D3FEE66B6 /* Pods-tkannaTests */ = {
@@ -346,7 +453,7 @@
 			);
 			name = "Pods-tkannaTests";
 			productName = "Pods-tkannaTests";
-			productReference = 598C8EC37F1F7905C419B35ACE2D62EA /* Pods_tkannaTests.framework */;
+			productReference = E009848776B2C2A4E81F62E1EA63FED6 /* Pods_tkannaTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B6312CAD7E18804AD5E11308495CFD52 /* Kanna */ = {
@@ -363,7 +470,26 @@
 			);
 			name = Kanna;
 			productName = Kanna;
-			productReference = 06394D36565E4EF684D2002FC4B5A94F /* Kanna.framework */;
+			productReference = ABC0D8DE6823F18A689F11995C805806 /* Kanna.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E0CABF13121D4AC1304472C54D5E660D /* Pods-tkanna */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 055D008E6BB13D058A50E77FABB64EE2 /* Build configuration list for PBXNativeTarget "Pods-tkanna" */;
+			buildPhases = (
+				BBBE7305EC9843214C7FDE09090FD15D /* Sources */,
+				C2DC7B01CBA977298AB94A885FDF62A3 /* Frameworks */,
+				D5A8D6FE691488C810AEC9A4785BB344 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6CC5C46882101B86FD29EF7326522F73 /* PBXTargetDependency */,
+				BE0CE812562325D173630635F6ECB44E /* PBXTargetDependency */,
+			);
+			name = "Pods-tkanna";
+			productName = "Pods-tkanna";
+			productReference = 55C741E46FE4307928B32C748091BE0B /* Pods_tkanna.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -383,12 +509,13 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = E24B655FAE5B51D44F94D2BC44957B85 /* Products */;
+			productRefGroup = 7E32250B56EB1AB29431560571F007E8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				79C040AFDDCE1BCBF6D8B5EB0B85887F /* Alamofire */,
 				B6312CAD7E18804AD5E11308495CFD52 /* Kanna */,
-				730E41754350A4EF6958890151EE3BA9 /* Pods-tkanna */,
+				E0CABF13121D4AC1304472C54D5E660D /* Pods-tkanna */,
 				A3010565DD050E8CDF14806D3FEE66B6 /* Pods-tkannaTests */,
 				07BAEC59255C7F1F115BF64A57EC6C4D /* Pods-tkannaUITests */,
 			);
@@ -396,19 +523,44 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5FBB8A878C1DE7E3E6282EA1EA6FB16D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3B8EBDC7D46375322C2614DCE43B384E /* Pods-tkanna-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8EB287F3810F2DC1D49C80C4BFD38570 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A82431B78B5390CBD0207CBC3FBFE815 /* Pods-tkannaUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95CC2C7E06DC188A05DAAEE9CAA555A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADF19C953CE2A7D0B72EC93A81FCCC26 /* Alamofire-dummy.m in Sources */,
+				8EB11202167FCDDF1257AAAB1D1FB244 /* Alamofire.swift in Sources */,
+				5CB05FBCB32D21E194B5ECF680CB6AE0 /* Download.swift in Sources */,
+				095406039B4D371E48D08B38A2975AC8 /* Error.swift in Sources */,
+				4081EA628AF0B73AC51FFB9D7AB3B89E /* Manager.swift in Sources */,
+				C7B6DD7C0456C50289A2C381DFE9FA3F /* MultipartFormData.swift in Sources */,
+				34CCDCA848A701466256BC2927DA8856 /* NetworkReachabilityManager.swift in Sources */,
+				BE41196F6A3903E59C3306FE3F8B43FE /* Notifications.swift in Sources */,
+				C0DB70AB368765DC64BFB5FEA75E0696 /* ParameterEncoding.swift in Sources */,
+				EFE92E8D3813DD26E78E93EEAF6D7E7E /* Request.swift in Sources */,
+				62E8346F03C03E7F4D631361F325689E /* Response.swift in Sources */,
+				3EA8F215C9C1432D74E5CCA4834AA8C0 /* ResponseSerialization.swift in Sources */,
+				AA314156AC500125F4078EE968DB14C6 /* Result.swift in Sources */,
+				7B48852C4D848FA2DA416A98F6425869 /* ServerTrustPolicy.swift in Sources */,
+				AE4CF87C02C042DF13ED5B21C4FDC1E0 /* Stream.swift in Sources */,
+				16102E4E35FAA0FC4161282FECE56469 /* Timeline.swift in Sources */,
+				5BC19E6E0F199276003F0AF96838BCE5 /* Upload.swift in Sources */,
+				2D3405986FC586FA6C0A5E0B6BA7E64E /* Validation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBBE7305EC9843214C7FDE09090FD15D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C63FCD302630BD2767D8FAB7AA221FD /* Pods-tkanna-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,11 +588,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CAD9ADE94DF23C7621D4E5011C564DF6 /* PBXTargetDependency */ = {
+		6CC5C46882101B86FD29EF7326522F73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = 79C040AFDDCE1BCBF6D8B5EB0B85887F /* Alamofire */;
+			targetProxy = 3A816D847407D10673E891713CEA6459 /* PBXContainerItemProxy */;
+		};
+		BE0CE812562325D173630635F6ECB44E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Kanna;
 			target = B6312CAD7E18804AD5E11308495CFD52 /* Kanna */;
-			targetProxy = DA2CFF52C09AE9A075B994180D049119 /* PBXContainerItemProxy */;
+			targetProxy = 00E5C33610FF4D5783EC6478CE1D823F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -472,6 +630,69 @@
 				PRODUCT_NAME = Pods_tkannaUITests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		32AD5F8918CA8B349E4671410FA624C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3D45C17F41AF730AB57E323003A1B2A /* Alamofire.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		33B5D0560D361F237FFCE0AA14C56970 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74164B5DAFF9660EA6452DFFACCF1DA1 /* Pods-tkanna.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-tkanna/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-tkanna/Pods-tkanna.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_tkanna;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -558,39 +779,6 @@
 			};
 			name = Debug;
 		};
-		626B3CA6E413075C31379B9B58845922 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D028E1A294C9CA4A41952149A4E69DAC /* Pods-tkanna.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-tkanna/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-tkanna/Pods-tkanna.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_tkanna;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		65A189C22735B02B585844F96C4AC294 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FF186BBF54BC2B954ED78A2A34B9CC2B /* Pods-tkannaUITests.release.xcconfig */;
@@ -624,9 +812,9 @@
 			};
 			name = Release;
 		};
-		79947E587F0EDC52249E1F271D3A6F9A /* Debug */ = {
+		75218111E718FACE36F771E8ABECDB62 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 74164B5DAFF9660EA6452DFFACCF1DA1 /* Pods-tkanna.debug.xcconfig */;
+			baseConfigurationReference = A3D45C17F41AF730AB57E323003A1B2A /* Alamofire.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -637,18 +825,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-tkanna/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-tkanna/Pods-tkanna.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_tkanna;
+				PRODUCT_NAME = Alamofire;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -683,6 +867,39 @@
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_tkannaTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8BF375C8C17508058B28B2003CA21EC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D028E1A294C9CA4A41952149A4E69DAC /* Pods-tkanna.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-tkanna/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-tkanna/Pods-tkanna.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_tkanna;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -726,7 +943,7 @@
 		};
 		ADF0F62DEA88DEDE28D6B457ED481B6E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EDD1BC9E9DE30B505C975153B2CD964B /* Kanna.xcconfig */;
+			baseConfigurationReference = 1B1D67926674A7778594162B49A16776 /* Kanna.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -755,7 +972,7 @@
 		};
 		BDCC9486BE3C2468B67A63294291DC9F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EDD1BC9E9DE30B505C975153B2CD964B /* Kanna.xcconfig */;
+			baseConfigurationReference = 1B1D67926674A7778594162B49A16776 /* Kanna.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -786,6 +1003,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		055D008E6BB13D058A50E77FABB64EE2 /* Build configuration list for PBXNativeTarget "Pods-tkanna" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33B5D0560D361F237FFCE0AA14C56970 /* Debug */,
+				8BF375C8C17508058B28B2003CA21EC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2062A926DC85F5C9EFAC288EF8A69D92 /* Build configuration list for PBXNativeTarget "Pods-tkannaUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -804,11 +1030,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA0846AD6349C44CCAAD21B98C784550 /* Build configuration list for PBXNativeTarget "Pods-tkanna" */ = {
+		3CFB42910790CF0BDBCCEBAACD6B9367 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				79947E587F0EDC52249E1F271D3A6F9A /* Debug */,
-				626B3CA6E413075C31379B9B58845922 /* Release */,
+				75218111E718FACE36F771E8ABECDB62 /* Debug */,
+				32AD5F8918CA8B349E4671410FA624C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
