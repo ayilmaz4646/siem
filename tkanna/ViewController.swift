@@ -19,7 +19,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var tbl_line = [item]()
     var tbl_line_s = [String]()
     var tbl_line_filtered = [String]()
+    var tbl_line_lang = [String]()
     var searchBarActive:Bool = false
+    var listLangActive:Bool = false
+    var selectLang = String()
 
     
     override func viewDidLoad() {
@@ -40,20 +43,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         print("AAAAAAAAA", tbl_line_s)
         
-//        if let found = find(tbl_line.map({ $0; $1.map{ $0.lang == "e" } })) {
-//            let obj = tbl_line[found]
+//        for (slang, _) in tbl_line.enumerate(){
+//            print("Item \(slang): \(tbl_line[slang].lang)")
+//            if (tbl_line[slang].lang).indexOf("nl") != nil {
+//                tbl_line_lang.append(tbl_line[slang].title)
+//            }
 //        }
-//        
-//        let searchText = "d"
-//        
-//        let filtered = tbl_line.map(
-//            ($0, $1.filter {
-//                $0.rangeOfString(searchText, options: .CaseInsensitiveSearch) != nil
-//                })
-//            };.filter { !isEmpty($1) )
-//        
-//        print(filtered)
-
+//        print("LLLLLLLLLL", tbl_line_lang)
         
     }
     
@@ -69,15 +65,32 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         navigationItem.titleView = imageView
     }
     
+    @IBAction func langButton(sender: AnyObject) {
+        listLangActive = true
+        selectLang = "nl"
+        print(listLangActive)
+        print(selectLang)
+        for (slang, _) in tbl_line.enumerate(){
+            print("Item \(slang): \(tbl_line[slang].lang)")
+            if (tbl_line[slang].lang).indexOf(selectLang) != nil {
+                tbl_line_lang.append(tbl_line[slang].title)
+            }
+        }
+        self.tableView.reloadData()
+        print("tbbbb", tbl_line_lang)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-//        return dataNameList.count
         if (searchBarActive){
             return tbl_line_filtered.count
+        }
+        else if (listLangActive){
+            return tbl_line_lang.count
         }
         return tbl_line.count
     }
@@ -94,11 +107,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         {
             cell.textLabel?.text = tbl_line_filtered[indexPath.row]
         }
+        else if (listLangActive)
+        {
+            cell.textLabel?.text = tbl_line_lang[indexPath.row]
+        }
         else
         {
             cell.textLabel?.text = String(tbl_line[indexPath.row].title)
             cell.detailTextLabel?.text = String(tbl_line[indexPath.row].lang)
         }
+        cell.textLabel!.font = UIFont(name:"TimesNewRomanPS-BoldMT ", size:12)
         
         return cell
     
@@ -162,23 +180,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
                     tbl_line.append(item_value)
                     
-                    print("Url Geldiii...")
-                    //print(item_value.lang)
-//                    dataNameList += link_label!.componentsSeparatedByString("")
-//                    dataLinkList += link_url!.componentsSeparatedByString("")
                 }
-//                print("Geldiii...")
-//                print(item_value.title)
-                //print(link_url)
-                //dataList2.insertObject(link_label!, atIndex: 0)
+
             }
-            
-            
-//            print("DATA =", dataList2)
-            
-            //self.dataList.append(dataList2.componentsJoinedByString(""))
+
         }
-        
         
     }
     
@@ -224,14 +230,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return
         }
     }
-    
-
-
-class item {
-    var title = String()
-    var link = String()
-    var lang = [String]()
-    
-}
     
 }
