@@ -10,19 +10,38 @@ import UIKit
 import Kanna
 import Alamofire
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var newPicker: UIPickerView!
+    @IBAction func about(sender: AnyObject) {
+    }
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var langPicker: UIPickerView!
+    @IBOutlet weak var pickerViewContainer: UIView!
+    @IBAction func HidePV(sender: AnyObject) {
+        pickerViewContainer.hidden = true
+        newPicker.hidden = true
+
+    }
+
+    @IBAction func segueButton(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("segue", sender: nil)
+    }
+    @IBAction func tabButton(sender: AnyObject) {
+        self.performSegueWithIdentifier("seguetab", sender: nil)
+    }
     @IBOutlet weak var tableView: UITableView!
 
     var tbl_line = [item]()
     var tbl_line_s = [String]()
     var tbl_line_filtered = [String]()
     var tbl_line_lang = [String]()
+    var language = [String]()
+    var uniqlang = [String]()
     var searchBarActive:Bool = false
     var listLangActive:Bool = false
-    var selectLang = String()
 
     
     override func viewDidLoad() {
@@ -32,16 +51,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         print("count", tbl_line.count)
         //print("count eski", dataNameList.count)
         print("lang", tbl_line[2].lang[1])
+        pickerViewContainer.hidden = true
+        newPicker.hidden = true
         
         tableView.delegate = self
         searchBar.delegate = self
         tableView.dataSource = self
+        newPicker.delegate = self
+        newPicker.dataSource = self
+
+
+        
         
         for (title, _) in tbl_line.enumerate(){
             print("Item \(title): \(tbl_line[title].lang)")
-            tbl_line_s.append(tbl_line[title].title)
+            language.append("all")
+            language += tbl_line[title].lang
         }
-        print("AAAAAAAAA", tbl_line_s)
+        uniqlang = Array(Set(language)).sort()
+        print("AAAAAAAAA", language)
+        print("uniq", uniqlang)
         
 //        for (slang, _) in tbl_line.enumerate(){
 //            print("Item \(slang): \(tbl_line[slang].lang)")
@@ -57,33 +86,73 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let nav = self.navigationController?.navigationBar
         nav?.barStyle = UIBarStyle.Default
-        nav?.tintColor = UIColor.yellowColor()
+        //nav?.tintColor = UIColor.yellowColor()
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         imageView.contentMode = .ScaleAspectFit
         let image = UIImage(named: "elrehaLogo")
         imageView.image = image
         navigationItem.titleView = imageView
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
+        imageView.userInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGestureRecognizer)
+        
+    }
+    
+    func imageTapped(img: AnyObject)
+    {
+        
     }
     
     @IBAction func langButton(sender: AnyObject) {
-        listLangActive = true
-        selectLang = "nl"
+        pickerViewContainer.hidden = false
+        newPicker.hidden = false
         print(listLangActive)
-        print(selectLang)
-        for (slang, _) in tbl_line.enumerate(){
-            print("Item \(slang): \(tbl_line[slang].lang)")
-            if (tbl_line[slang].lang).indexOf(selectLang) != nil {
-                tbl_line_lang.append(tbl_line[slang].title)
-            }
-        }
-        self.tableView.reloadData()
-        print("tbbbb", tbl_line_lang)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return uniqlang.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return uniqlang[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        tbl_line_lang.removeAll()
+        let selectLang = uniqlang[row]
+        print("llll", selectLang)
+
+        if selectLang == "all"
+        {
+            listLangActive = false
+        }
+        else
+        {
+            for (slang, _) in tbl_line.enumerate(){
+                //print("Item \(slang): \(tbl_line[slang].lang)")
+                if (tbl_line[slang].lang).indexOf(selectLang) != nil {
+                    tbl_line_lang.append(tbl_line[slang].title)
+                }
+            }
+            
+            listLangActive = true
+        }
+        
+        self.tableView.reloadData()
+        //print("tbbbb", tbl_line_lang)
+        //newPicker.hidden = true
+
+    }
+
     internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         if (searchBarActive){

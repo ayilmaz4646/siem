@@ -12,12 +12,12 @@
 		5C21CDA11D387A290078F56B /* item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C21CDA01D387A290078F56B /* item.swift */; };
 		5C7A8C851D1557B5002DA4B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A8C841D1557B5002DA4B7 /* AppDelegate.swift */; };
 		5C7A8C871D1557B5002DA4B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A8C861D1557B5002DA4B7 /* ViewController.swift */; };
-		5C7A8C8A1D1557B5002DA4B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C7A8C881D1557B5002DA4B7 /* Main.storyboard */; };
 		5C7A8C8C1D1557B5002DA4B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C7A8C8B1D1557B5002DA4B7 /* Assets.xcassets */; };
 		5C7A8C8F1D1557B5002DA4B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C7A8C8D1D1557B5002DA4B7 /* LaunchScreen.storyboard */; };
 		5C7A8C9A1D1557B6002DA4B7 /* tkannaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A8C991D1557B6002DA4B7 /* tkannaTests.swift */; };
 		5C7A8CA51D1557B6002DA4B7 /* tkannaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A8CA41D1557B6002DA4B7 /* tkannaUITests.swift */; };
 		5CBD92411D197B3400F0E0B6 /* detailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBD92401D197B3400F0E0B6 /* detailsViewController.swift */; };
+		5CD11D8C1D390AF50009AFED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CD11D8A1D390AF50009AFED /* Main.storyboard */; };
 		A2BF32A10CE49D51722DD380 /* Pods_tkannaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB267392B71BDA574D179177 /* Pods_tkannaUITests.framework */; };
 		D069B9EA672A0761DE39CE07 /* Pods_tkanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFCECD26CE3B2DF54B4B97F /* Pods_tkanna.framework */; };
 /* End PBXBuildFile section */
@@ -46,7 +46,6 @@
 		5C7A8C811D1557B5002DA4B7 /* tkanna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tkanna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C7A8C841D1557B5002DA4B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C7A8C861D1557B5002DA4B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5C7A8C891D1557B5002DA4B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C7A8C8B1D1557B5002DA4B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C7A8C8E1D1557B5002DA4B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C7A8C901D1557B5002DA4B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +56,7 @@
 		5C7A8CA41D1557B6002DA4B7 /* tkannaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tkannaUITests.swift; sourceTree = "<group>"; };
 		5C7A8CA61D1557B6002DA4B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CBD92401D197B3400F0E0B6 /* detailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailsViewController.swift; sourceTree = "<group>"; };
+		5CD11D8B1D390AF50009AFED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		64C417B02A6CBE4D98E9FF8A /* Pods_tkannaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tkannaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC2BEC6804E678C88BFBE6D /* Pods-tkannaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tkannaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tkannaTests/Pods-tkannaTests.release.xcconfig"; sourceTree = "<group>"; };
 		A0067D377E88768577CB719F /* Pods-tkannaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tkannaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tkannaUITests/Pods-tkannaUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,8 +123,8 @@
 				5C7A8C841D1557B5002DA4B7 /* AppDelegate.swift */,
 				5C7A8C861D1557B5002DA4B7 /* ViewController.swift */,
 				5C21CDA01D387A290078F56B /* item.swift */,
-				5C7A8C881D1557B5002DA4B7 /* Main.storyboard */,
 				5CBD92401D197B3400F0E0B6 /* detailsViewController.swift */,
+				5CD11D8A1D390AF50009AFED /* Main.storyboard */,
 				5C7A8C8B1D1557B5002DA4B7 /* Assets.xcassets */,
 				5C7A8C8D1D1557B5002DA4B7 /* LaunchScreen.storyboard */,
 				5C7A8C901D1557B5002DA4B7 /* Info.plist */,
@@ -289,7 +289,7 @@
 				5C7A8C8F1D1557B5002DA4B7 /* LaunchScreen.storyboard in Resources */,
 				5C21CD9F1D3863090078F56B /* Images.xcassets in Resources */,
 				5C7A8C8C1D1557B5002DA4B7 /* Assets.xcassets in Resources */,
-				5C7A8C8A1D1557B5002DA4B7 /* Main.storyboard in Resources */,
+				5CD11D8C1D390AF50009AFED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,20 +476,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5C7A8C881D1557B5002DA4B7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5C7A8C891D1557B5002DA4B7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5C7A8C8D1D1557B5002DA4B7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5C7A8C8E1D1557B5002DA4B7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5CD11D8A1D390AF50009AFED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CD11D8B1D390AF50009AFED /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
