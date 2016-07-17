@@ -24,14 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         newPicker.hidden = true
 
     }
-
-    @IBAction func segueButton(sender: AnyObject) {
-        
-        self.performSegueWithIdentifier("segue", sender: nil)
-    }
-    @IBAction func tabButton(sender: AnyObject) {
-        self.performSegueWithIdentifier("seguetab", sender: nil)
-    }
+    @IBAction func tabButton(sender: AnyObject) {}
     @IBOutlet weak var tableView: UITableView!
 
     var tbl_line = [item]()
@@ -83,6 +76,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func viewDidAppear(animated: Bool) {
+        //navigationItem.titleView = UIImageView(image: UIImage(named: "elrehaLogo")!)
+//        navigationController?.navigationItem.titleView = UIImageView(image: UIImage(named: "elrehaLogo")!)
+//        navigationItem.titleView = UIImageView(image: UIImage(named: "elrehaLogo")!)
+//        
+//        navigationItem.titleView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"elrehaLogo"]];
         
         let nav = self.navigationController?.navigationBar
         nav?.barStyle = UIBarStyle.Default
@@ -93,9 +91,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         imageView.image = image
         navigationItem.titleView = imageView
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
-        imageView.userInteractionEnabled = true
-        imageView.addGestureRecognizer(tapGestureRecognizer)
+//        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
+//        imageView.userInteractionEnabled = true
+//        imageView.addGestureRecognizer(tapGestureRecognizer)
         
     }
     
@@ -108,6 +106,38 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         pickerViewContainer.hidden = false
         newPicker.hidden = false
         print(listLangActive)
+    }
+    
+    @IBAction func segueButton(sender: AnyObject) {
+        //self.performSegueWithIdentifier("segue", sender: nil)
+        let actionSheet = UIAlertController(title: "", message: "About", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let openAction = UIAlertAction(title: "Impressum", style: UIAlertActionStyle.Default) { (action) -> Void in
+            let text = "impressum"
+            self.performSegueWithIdentifier("segue", sender: text)
+            
+            
+        }
+        
+        let downloadAction = UIAlertAction(title: "About Elreha GmbH", style: UIAlertActionStyle.Default) { (action) -> Void in
+            
+            let text = "aboutelreha"
+            self.performSegueWithIdentifier("segue", sender: text)
+        }
+        
+        let dismissAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (action) -> Void in}
+        
+        actionSheet.addAction(openAction)
+        actionSheet.addAction(downloadAction)
+        actionSheet.addAction(dismissAction)
+        
+        presentViewController(actionSheet, animated: true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "segue" {
+            let detailsVC = segue.destinationViewController as? detailsViewController
+            detailsVC?.selectedTitle = sender as? String
+        }
     }
     
     override func didReceiveMemoryWarning() {

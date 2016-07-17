@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -107,7 +108,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KuM-ju-XsW">
                                 <rect key="frame" x="233" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="About"/>
                                 <connections>
                                     <action selector="segueButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MTk-dX-AbA"/>
                                 </connections>
@@ -127,10 +128,10 @@
             </objects>
             <point key="canvasLocation" x="739" y="-5"/>
         </scene>
-        <!--View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="Ujs-tz-ogl">
             <objects>
-                <viewController id="V2A-SN-tzJ" sceneMemberID="viewController">
+                <viewController id="V2A-SN-tzJ" customClass="detailsViewController" customModule="tkanna" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LNZ-42-l5C"/>
                         <viewControllerLayoutGuide type="bottom" id="hWy-t3-BXw"/>
@@ -138,9 +139,28 @@
                     <view key="view" contentMode="scaleToFill" id="vku-zA-Us9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0sL-3B-apj">
+                                <rect key="frame" x="8" y="72" width="304" height="392"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0sL-3B-apj" firstAttribute="centerX" secondItem="vku-zA-Us9" secondAttribute="centerX" id="7as-ux-as5"/>
+                            <constraint firstItem="0sL-3B-apj" firstAttribute="leading" secondItem="vku-zA-Us9" secondAttribute="leadingMargin" constant="-8" id="Lo2-o4-Ntd"/>
+                            <constraint firstItem="0sL-3B-apj" firstAttribute="top" secondItem="LNZ-42-l5C" secondAttribute="bottom" constant="8" symbolic="YES" id="ez1-Cr-m3e"/>
+                            <constraint firstItem="hWy-t3-BXw" firstAttribute="top" secondItem="0sL-3B-apj" secondAttribute="bottom" constant="16" id="wcP-VI-C4G"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="textView" destination="0sL-3B-apj" id="4u9-FT-35f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJu-pB-BQz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
