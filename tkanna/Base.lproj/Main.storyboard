@@ -22,25 +22,18 @@
                                 <rect key="frame" x="0.0" y="188" width="320" height="292"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mycell" textLabel="3XG-xt-coB" detailTextLabel="Gnu-XI-nrg" rowHeight="52" style="IBUITableViewCellStyleSubtitle" id="nl6-rl-jwt">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mycell" textLabel="3XG-xt-coB" rowHeight="52" style="IBUITableViewCellStyleDefault" id="nl6-rl-jwt">
                                         <rect key="frame" x="0.0" y="92" width="320" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nl6-rl-jwt" id="Vqu-pC-iC4">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3XG-xt-coB">
-                                                    <rect key="frame" x="15" y="9" width="32" height="20"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3XG-xt-coB">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="51"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gnu-XI-nrg">
-                                                    <rect key="frame" x="15" y="29" width="41" height="14"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -57,10 +50,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oIa-Fc-tcx">
-                                <rect key="frame" x="0.0" y="72" width="86" height="120"/>
+                                <rect key="frame" x="0.0" y="72" width="126" height="163"/>
                                 <subviews>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tXV-AJ-Ogl">
-                                        <rect key="frame" x="0.0" y="-6" width="86" height="44"/>
+                                        <rect key="frame" x="0.0" y="-6" width="126" height="44"/>
                                         <items>
                                             <barButtonItem width="24" style="plain" systemItem="fixedSpace" id="Sb1-Ye-SbI"/>
                                             <barButtonItem title="Hide" id="n1D-6r-tJK">
@@ -71,7 +64,7 @@
                                         </items>
                                     </toolbar>
                                     <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iyO-Jj-7tu">
-                                        <rect key="frame" x="0.0" y="38" width="86" height="82"/>
+                                        <rect key="frame" x="0.0" y="38" width="126" height="125"/>
                                         <connections>
                                             <outlet property="dataSource" destination="BYZ-38-t0r" id="WVR-RM-DQs"/>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="OKB-G5-edn"/>
@@ -95,20 +88,20 @@
                     <navigationItem key="navigationItem" id="KcV-V0-GAX">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="cQd-TM-PNV">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="inC-lv-Wwg">
-                                <rect key="frame" x="16" y="7" width="71" height="30"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="inC-lv-Wwg">
+                                <rect key="frame" x="16" y="7" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" image="world"/>
                                 <connections>
                                     <action selector="langButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uOq-i5-pbl"/>
                                 </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="q8e-vI-eD6">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KuM-ju-XsW">
-                                <rect key="frame" x="233" y="7" width="71" height="30"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KuM-ju-XsW">
+                                <rect key="frame" x="274" y="7" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="About"/>
+                                <state key="normal" image="info"/>
                                 <connections>
                                     <action selector="segueButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MTk-dX-AbA"/>
                                 </connections>
@@ -186,4 +179,8 @@
             <point key="canvasLocation" x="301" y="-5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="info" width="30" height="30"/>
+        <image name="world" width="30" height="30"/>
+    </resources>
 </document>

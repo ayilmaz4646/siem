@@ -33,17 +33,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var tbl_line_lang = [String]()
     var language = [String]()
     var uniqlang = [String]()
+    var language_icon = [String]()
     var searchBarActive:Bool = false
     var listLangActive:Bool = false
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if Reachability.isConnectedToNetwork() == false {
+            let alert = UIAlertController(title: "No Internet", message: "You need an internet connection to use this app", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,
+                handler: { ACTION in exit(0)}))
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+        }
         htmlParserWithKanna("http://www.elreha.de/technische-handbucher-archiv/")
-        print(tbl_line[1].title)
         print("count", tbl_line.count)
         //print("count eski", dataNameList.count)
-        print("lang", tbl_line[2].lang[1])
         pickerViewContainer.hidden = true
         newPicker.hidden = true
         
@@ -52,9 +58,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         newPicker.delegate = self
         newPicker.dataSource = self
-
-
-        
         
         for (title, _) in tbl_line.enumerate(){
             print("Item \(title): \(tbl_line[title].lang)")
@@ -64,14 +67,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         uniqlang = Array(Set(language)).sort()
         print("AAAAAAAAA", language)
         print("uniq", uniqlang)
+
+        set_language_icon_by_uniqlang()
         
-//        for (slang, _) in tbl_line.enumerate(){
-//            print("Item \(slang): \(tbl_line[slang].lang)")
-//            if (tbl_line[slang].lang).indexOf("nl") != nil {
-//                tbl_line_lang.append(tbl_line[slang].title)
-//            }
-//        }
-//        print("LLLLLLLLLL", tbl_line_lang)
+      
         
     }
     
@@ -153,12 +152,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return uniqlang[row]
+        return language_icon[row]
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         tbl_line_lang.removeAll()
-        let selectLang = uniqlang[row]
+        let selectLang = uniqlang[pickerView.selectedRowInComponent(0)]
         print("llll", selectLang)
 
         if selectLang == "all"
@@ -213,10 +212,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         else
         {
             cell.textLabel?.text = String(tbl_line[indexPath.row].title)
-            cell.detailTextLabel?.text = String(tbl_line[indexPath.row].lang)
+            //cell.detailTextLabel?.text = String(tbl_line[indexPath.row].lang)
         }
         cell.textLabel!.font = UIFont(name:"TimesNewRomanPS-BoldMT ", size:12)
-        
+        cell.textLabel?.lineBreakMode
+
         return cell
     
     }
@@ -257,6 +257,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         actionSheet.addAction(dismissAction)
         
         presentViewController(actionSheet, animated: true, completion: nil)
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 
     
@@ -327,6 +335,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         dispatch_async(dispatch_get_main_queue()) {
             self.tableView.reloadData()
             return
+        }
+    }
+    
+    func set_language_icon_by_uniqlang() {
+        
+        for (index, element) in uniqlang.enumerate() {
+            if ("\(element)") == "d"{
+                language_icon.append("\u{1f1e9}\u{1f1ea}")
+            }
+            else if ("\(element)") == "e"{
+                language_icon.append("\u{1F1EC}\u{1F1E7}")
+            }
+            else if ("\(element)") == "f"{
+                language_icon.append("\u{1F1EB}\u{1F1F7}")
+            }
+            else if ("\(element)") == "nl"{
+                language_icon.append("\u{1F1F3}\u{1F1F1}")
+            }
+            else if ("\(element)") == "pl"{
+                language_icon.append("\u{1F1F5}\u{1F1F1}")
+            }
+            else if ("\(element)") == "r"{
+                language_icon.append("\u{1F1F7}\u{1F1FA}")
+            }
+            else {
+                language_icon.append("\(element)")
+            }
         }
     }
     
