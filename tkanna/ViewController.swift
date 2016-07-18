@@ -64,23 +64,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             language.append("all")
             language += tbl_line[title].lang
         }
+        for (title, _) in tbl_line.enumerate(){
+            print("Item \(title): \(tbl_line[title].lang)")
+            tbl_line_s.append(tbl_line[title].title)
+        }
         uniqlang = Array(Set(language)).sort()
         print("AAAAAAAAA", language)
         print("uniq", uniqlang)
 
         set_language_icon_by_uniqlang()
-        
-      
-        
     }
     
     override func viewDidAppear(animated: Bool) {
-        //navigationItem.titleView = UIImageView(image: UIImage(named: "elrehaLogo")!)
-//        navigationController?.navigationItem.titleView = UIImageView(image: UIImage(named: "elrehaLogo")!)
-//        navigationItem.titleView = UIImageView(image: UIImage(named: "elrehaLogo")!)
-//        
-//        navigationItem.titleView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"elrehaLogo"]];
-        
         let nav = self.navigationController?.navigationBar
         nav?.barStyle = UIBarStyle.Default
         //nav?.tintColor = UIColor.yellowColor()
@@ -89,17 +84,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let image = UIImage(named: "elrehaLogo")
         imageView.image = image
         navigationItem.titleView = imageView
-        
-//        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
-//        imageView.userInteractionEnabled = true
-//        imageView.addGestureRecognizer(tapGestureRecognizer)
-        
     }
     
-    func imageTapped(img: AnyObject)
-    {
-        
-    }
+    func imageTapped(img: AnyObject){}
     
     @IBAction func langButton(sender: AnyObject) {
         pickerViewContainer.hidden = false
@@ -177,8 +164,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         self.tableView.reloadData()
-        //print("tbbbb", tbl_line_lang)
-        //newPicker.hidden = true
 
     }
 
@@ -212,11 +197,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         else
         {
             cell.textLabel?.text = String(tbl_line[indexPath.row].title)
-            //cell.detailTextLabel?.text = String(tbl_line[indexPath.row].lang)
         }
         cell.textLabel!.font = UIFont(name:"TimesNewRomanPS-BoldMT ", size:12)
-        cell.textLabel?.lineBreakMode
-
         return cell
     
     }
