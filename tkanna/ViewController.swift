@@ -55,6 +55,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         tableView.delegate = self
         searchBar.delegate = self
+        searchBar.showsCancelButton = true
         tableView.dataSource = self
         newPicker.delegate = self
         newPicker.dataSource = self
@@ -282,7 +283,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
         searchBarActive = false
+        self.tableView.reloadData()
+        
     }
     
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
@@ -312,7 +317,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         self.tableView.reloadData()
     }
-    
+
     func reloadDataList(){
         dispatch_async(dispatch_get_main_queue()) {
             self.tableView.reloadData()
