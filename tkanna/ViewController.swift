@@ -306,14 +306,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             return range.location != NSNotFound
         })
-        if (tbl_line_filtered.count == 0)
-        {
-            searchBarActive = false
-        }
-        else
-        {
-            searchBarActive = true
-        }
+        
+        searchBarActive = true
         
         self.tableView.reloadData()
     }
