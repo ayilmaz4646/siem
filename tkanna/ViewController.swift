@@ -19,11 +19,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var langPicker: UIPickerView!
     @IBOutlet weak var pickerViewContainer: UIView!
-    @IBAction func HidePV(sender: AnyObject) {
-        pickerViewContainer.hidden = true
-        newPicker.hidden = true
-
-    }
+    @IBAction func HidePV(sender: AnyObject) {}
     @IBAction func tabButton(sender: AnyObject) {}
     @IBOutlet weak var tableView: UITableView!
 
@@ -36,6 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var language_icon = [String]()
     var searchBarActive:Bool = false
     var listLangActive:Bool = false
+    var listLangPickerActive:Bool = true
 
     
     override func viewDidLoad() {
@@ -90,8 +87,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func imageTapped(img: AnyObject){}
     
     @IBAction func langButton(sender: AnyObject) {
-        pickerViewContainer.hidden = false
-        newPicker.hidden = false
+        if listLangPickerActive == true{
+            listLangPickerActive = false
+            pickerViewContainer.hidden = false
+            newPicker.hidden = false
+        }
+        else{
+            listLangPickerActive = true
+            pickerViewContainer.hidden = true
+            newPicker.hidden = true
+        }
         print(listLangActive)
     }
     
@@ -101,22 +106,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let openAction = UIAlertAction(title: "Impressum", style: UIAlertActionStyle.Default) { (action) -> Void in
             let text = "impressum"
             self.performSegueWithIdentifier("segue", sender: text)
-            
-            
         }
         
         let downloadAction = UIAlertAction(title: "About Elreha GmbH", style: UIAlertActionStyle.Default) { (action) -> Void in
-            
             let text = "aboutelreha"
             self.performSegueWithIdentifier("segue", sender: text)
         }
         
         let dismissAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (action) -> Void in}
-        
+
         actionSheet.addAction(openAction)
         actionSheet.addAction(downloadAction)
         actionSheet.addAction(dismissAction)
-        
+
         presentViewController(actionSheet, animated: true, completion: nil)
     }
     
@@ -160,11 +162,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     tbl_line_lang.append(tbl_line[slang].title)
                 }
             }
-            
+
             listLangActive = true
         }
-        
+
         self.tableView.reloadData()
+        
 
     }
 
@@ -279,7 +282,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-        searchBarActive = true
+        searchBarActive = false
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
