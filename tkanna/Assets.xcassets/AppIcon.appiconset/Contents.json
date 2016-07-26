@@ -50,6 +50,16 @@
     },
     {
       "idiom" : "ipad",
+      "size" : "40x40",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "ipad",
+      "size" : "40x40",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "ipad",
       "size" : "50x50",
       "scale" : "1x"
     },
@@ -68,6 +78,16 @@
       "size" : "72x72",
       "idiom" : "ipad",
       "filename" : "Icon-App-76x76@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "ipad",
+      "size" : "76x76",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "ipad",
+      "size" : "76x76",
       "scale" : "2x"
     },
     {

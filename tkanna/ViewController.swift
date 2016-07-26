@@ -8,9 +8,8 @@
 
 import UIKit
 import Kanna
-import Alamofire
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIDocumentInteractionControllerDelegate {
 
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var newPicker: UIPickerView!
@@ -33,6 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var searchBarActive:Bool = false
     var listLangActive:Bool = false
     var listLangPickerActive:Bool = true
+    var docController: UIDocumentInteractionController?
 
     
     override func viewDidLoad() {
@@ -46,7 +46,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         htmlParserWithKanna("http://www.elreha.de/technische-handbucher-archiv/")
         print("count", tbl_line.count)
-        //print("count eski", dataNameList.count)
         pickerViewContainer.hidden = true
         newPicker.hidden = true
         
@@ -76,7 +75,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidAppear(animated: Bool) {
         let nav = self.navigationController?.navigationBar
         nav?.barStyle = UIBarStyle.Default
-        //nav?.tintColor = UIColor.yellowColor()
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         imageView.contentMode = .ScaleAspectFit
         let image = UIImage(named: "elrehaLogo")
@@ -97,11 +95,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             pickerViewContainer.hidden = true
             newPicker.hidden = true
         }
-        print(listLangActive)
     }
     
     @IBAction func segueButton(sender: AnyObject) {
-        //self.performSegueWithIdentifier("segue", sender: nil)
         let actionSheet = UIAlertController(title: "", message: "About", preferredStyle: UIAlertControllerStyle.ActionSheet)
         let openAction = UIAlertAction(title: "Impressum", style: UIAlertActionStyle.Default) { (action) -> Void in
             let text = "impressum"
@@ -157,7 +153,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         else
         {
             for (slang, _) in tbl_line.enumerate(){
-                //print("Item \(slang): \(tbl_line[slang].lang)")
                 if (tbl_line[slang].lang).indexOf(selectLang) != nil {
                     tbl_line_lang.append(tbl_line[slang].title)
                 }
@@ -210,7 +205,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         NSLog("You selected cell #ssss")
         
-        let actionSheet = UIAlertController(title: "", message: "Share your Note", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let actionSheet = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
         
         let openAction = UIAlertAction(title: "Open", style: UIAlertActionStyle.Default) { (action) -> Void in
             let firstActivityItem = UIApplication.sharedApplication().openURL(NSURL(string: String(self.tbl_line[indexPath.row].link))!)
@@ -218,31 +213,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             _ = UIActivityViewController(activityItems: [firstActivityItem], applicationActivities: nil)
         }
         
-        let downloadAction = UIAlertAction(title: "Download", style: UIAlertActionStyle.Default) { (action) -> Void in
-            var localPath: NSURL?
-            Alamofire.download(.GET,
-                String(self.tbl_line[indexPath.row].link),
-                destination: { (temporaryURL, response) in
-                    let directoryURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
-                    let pathComponent = response.suggestedFilename
-                    localPath = directoryURL.URLByAppendingPathComponent(pathComponent!)
-                    return localPath!
-                    
-                }
-                )
-                .response { (request, response, _, error) in
-                    print(response)
-                    print("Downloaded file to \(localPath!)")
-            }
-        }
-        
         let dismissAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (action) -> Void in}
         
         actionSheet.addAction(openAction)
-        actionSheet.addAction(downloadAction)
         actionSheet.addAction(dismissAction)
         
         presentViewController(actionSheet, animated: true, completion: nil)
+    }
+
+    func documentInteractionControllerDidDismissOpenInMenu(controller: UIDocumentInteractionController){
+        print("dissmissed")
+
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Kanna.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,7 +32,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<key>730E41754350A4EF6958890151EE3BA9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -48,11 +43,6 @@
 			<true/>
 		</dict>
 		<key>B6312CAD7E18804AD5E11308495CFD52</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E0CABF13121D4AC1304472C54D5E660D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
