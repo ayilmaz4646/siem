@@ -10,5 +10,6 @@ class item {
     var title = String()
     var link = String()
     var lang = [String]()
+    var size = String()
     
 }

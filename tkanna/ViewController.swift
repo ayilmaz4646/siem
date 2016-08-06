@@ -23,9 +23,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
 
     var tbl_line = [item]()
-    var tbl_line_s = [String]()
-    var tbl_line_filtered = [String]()
-    var tbl_line_lang = [String]()
+    var tbl_temp = [item]()
+    var tbl_lang = [item]()
     var language = [String]()
     var uniqlang = [String]()
     var language_icon = [String]()
@@ -33,7 +32,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var listLangActive:Bool = false
     var listLangPickerActive:Bool = true
     var docController: UIDocumentInteractionController?
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +43,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
         }
         htmlParserWithKanna("http://www.elreha.de/technische-handbucher-archiv/")
-        print("count", tbl_line.count)
         pickerViewContainer.hidden = true
         newPicker.hidden = true
         
@@ -57,18 +54,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         newPicker.dataSource = self
         
         for (title, _) in tbl_line.enumerate(){
-            print("Item \(title): \(tbl_line[title].lang)")
             language.append("all")
             language += tbl_line[title].lang
         }
-        for (title, _) in tbl_line.enumerate(){
-            print("Item \(title): \(tbl_line[title].lang)")
-            tbl_line_s.append(tbl_line[title].title)
-        }
         uniqlang = Array(Set(language)).sort()
-        print("AAAAAAAAA", language)
-        print("uniq", uniqlang)
-
+        tbl_temp = tbl_line
         set_language_icon_by_uniqlang()
     }
     
@@ -142,39 +132,68 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        tbl_line_lang.removeAll()
+        searchBar.text = ""
+        tbl_lang.removeAll()
+        tbl_temp.removeAll()
         let selectLang = uniqlang[pickerView.selectedRowInComponent(0)]
-        print("llll", selectLang)
 
         if selectLang == "all"
         {
             listLangActive = false
+            tbl_temp = tbl_line
         }
         else
         {
             for (slang, _) in tbl_line.enumerate(){
                 if (tbl_line[slang].lang).indexOf(selectLang) != nil {
-                    tbl_line_lang.append(tbl_line[slang].title)
+                    tbl_lang.append(tbl_line[slang])
+                    tbl_temp.append(tbl_line[slang])
                 }
             }
-
+            
             listLangActive = true
         }
-
+        
         self.tableView.reloadData()
         
 
     }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        if (listLangActive){
+            tbl_temp = tbl_lang
+        }else{
+            tbl_temp = tbl_line
+        }
+        self.tableView.reloadData()
+        
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if (searchText.isEmpty){
+            self.tableView.reloadData()
+            return
+        }
+        
+        if (listLangActive){
+            tbl_temp = tbl_lang.filter {
+                $0.title.rangeOfString(searchText, options: .CaseInsensitiveSearch) != nil
+            }
+        }
+        else{
+            tbl_temp = tbl_line.filter {
+                $0.title.rangeOfString(searchText, options: .CaseInsensitiveSearch) != nil
+            }
+        }
+        
+        self.tableView.reloadData()
+    }
 
     internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        if (searchBarActive){
-            return tbl_line_filtered.count
-        }
-        else if (listLangActive){
-            return tbl_line_lang.count
-        }
-        return tbl_line.count
+        return tbl_temp.count
     }
     
     internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
@@ -184,19 +203,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell = NSBundle.mainBundle().loadNibNamed("mycell", owner: self, options: nil)[0] as! UITableViewCell
         
         }
+        cell.textLabel?.text = String(tbl_temp[indexPath.row].title)
         
-        if (searchBarActive)
-        {
-            cell.textLabel?.text = tbl_line_filtered[indexPath.row]
-        }
-        else if (listLangActive)
-        {
-            cell.textLabel?.text = tbl_line_lang[indexPath.row]
-        }
-        else
-        {
-            cell.textLabel?.text = String(tbl_line[indexPath.row].title)
-        }
         cell.textLabel!.font = UIFont(name:"TimesNewRomanPS-BoldMT ", size:12)
         return cell
     
@@ -207,8 +215,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let actionSheet = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
         
-        let openAction = UIAlertAction(title: "Open", style: UIAlertActionStyle.Default) { (action) -> Void in
-            let firstActivityItem = UIApplication.sharedApplication().openURL(NSURL(string: String(self.tbl_line[indexPath.row].link))!)
+        let openAction = UIAlertAction(title: "Open (\(self.tbl_temp[indexPath.row].size))", style: UIAlertActionStyle.Default) { (action) -> Void in
+            let firstActivityItem = UIApplication.sharedApplication().openURL(NSURL(string: String(self.tbl_temp[indexPath.row].link))!)
             
             _ = UIActivityViewController(activityItems: [firstActivityItem], applicationActivities: nil)
         }
@@ -244,11 +252,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let link_label = tbl_tr.css("td:nth-child(1)").text
                 let link_url   = tbl_tr.xpath("td[@class='column-2']/a/@href").text
                 let link_lang  = tbl_tr.xpath("td/img/@alt").text
+                let link_size  = tbl_tr.xpath("td[@class='column-9']").text
                 let item_value = item()
-                
                 if ((link_url) != ""){
                     item_value.title = link_label!
                     item_value.link = link_url!
+                    item_value.size = link_size!
                     item_value.lang += link_lang!.componentsSeparatedByString("_flag")
                     item_value.lang.removeLast()
 
@@ -262,40 +271,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-        searchBarActive = false
-    }
-    
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        searchBar.text = ""
-        searchBar.resignFirstResponder()
-        searchBarActive = false
-        self.tableView.reloadData()
-        
-    }
-    
-    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-        searchBarActive = false
-    }
-    
-    func searchBarBookmarkButtonClicked(searchBar: UISearchBar) {
-        searchBarActive = false
-    }
-    
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-
-        tbl_line_filtered = tbl_line_s.filter({ (text) -> Bool in
-            let txt : NSString = text
-            let range = txt.rangeOfString(searchText, options: NSStringCompareOptions .CaseInsensitiveSearch)
-            
-            return range.location != NSNotFound
-        })
-        
-        searchBarActive = true
-        
-        self.tableView.reloadData()
-    }
-
     func reloadDataList(){
         dispatch_async(dispatch_get_main_queue()) {
             self.tableView.reloadData()
