@@ -88,21 +88,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @IBAction func segueButton(sender: AnyObject) {
-        let actionSheet = UIAlertController(title: "", message: "About", preferredStyle: UIAlertControllerStyle.ActionSheet)
-        let openAction = UIAlertAction(title: "Impressum", style: UIAlertActionStyle.Default) { (action) -> Void in
+        let actionSheet = UIAlertController()
+        let impAction = UIAlertAction(title: "Impressum", style: UIAlertActionStyle.Default) { (action) -> Void in
             let text = "impressum"
             self.performSegueWithIdentifier("segue", sender: text)
         }
         
-        let downloadAction = UIAlertAction(title: "About Elreha GmbH", style: UIAlertActionStyle.Default) { (action) -> Void in
+        let aboutAction = UIAlertAction(title: "About Elreha GmbH", style: UIAlertActionStyle.Default) { (action) -> Void in
             let text = "aboutelreha"
+            self.performSegueWithIdentifier("segue", sender: text)
+        }
+        let aboutappAction = UIAlertAction(title: "About Elreha App", style: UIAlertActionStyle.Default) { (action) -> Void in
+            let text = "aboutelrehaapp"
             self.performSegueWithIdentifier("segue", sender: text)
         }
         
         let dismissAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (action) -> Void in}
 
-        actionSheet.addAction(openAction)
-        actionSheet.addAction(downloadAction)
+        actionSheet.addAction(impAction)
+        actionSheet.addAction(aboutAction)
+        actionSheet.addAction(aboutappAction)
         actionSheet.addAction(dismissAction)
 
         presentViewController(actionSheet, animated: true, completion: nil)
@@ -213,7 +218,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         NSLog("You selected cell #ssss")
         
-        let actionSheet = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let actionSheet = UIAlertController()
         
         let openAction = UIAlertAction(title: "Open (\(self.tbl_temp[indexPath.row].size))", style: UIAlertActionStyle.Default) { (action) -> Void in
             let firstActivityItem = UIApplication.sharedApplication().openURL(NSURL(string: String(self.tbl_temp[indexPath.row].link))!)
