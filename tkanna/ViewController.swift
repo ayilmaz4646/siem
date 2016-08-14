@@ -55,11 +55,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         for (title, _) in tbl_line.enumerate(){
             language.append("all")
+            language.append("tr")
             language += tbl_line[title].lang
         }
         uniqlang = Array(Set(language)).sort()
         tbl_temp = tbl_line
         set_language_icon_by_uniqlang()
+        changetitle(language_icon[0])
+        changetitle2("\u{2139}")
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -146,6 +149,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         {
             listLangActive = false
             tbl_temp = tbl_line
+        }else if selectLang == "tr"
+        {
+            listLangActive = true
+            tbl_lang.append(tbl_line[143])
+            tbl_temp.append(tbl_line[143])
         }
         else
         {
@@ -153,11 +161,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 if (tbl_line[slang].lang).indexOf(selectLang) != nil {
                     tbl_lang.append(tbl_line[slang])
                     tbl_temp.append(tbl_line[slang])
+                    
                 }
             }
-            
+
             listLangActive = true
         }
+        changetitle(language_icon[row])
         
         self.tableView.reloadData()
         
@@ -216,12 +226,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        NSLog("You selected cell #ssss")
         
         let actionSheet = UIAlertController()
-        
         let openAction = UIAlertAction(title: "Open (\(self.tbl_temp[indexPath.row].size))", style: UIAlertActionStyle.Default) { (action) -> Void in
-            let firstActivityItem = UIApplication.sharedApplication().openURL(NSURL(string: String(self.tbl_temp[indexPath.row].link))!)
+            let stringUrl = self.tbl_temp[indexPath.row].link
+            let URL = NSURL(string: stringUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
+            let firstActivityItem = UIApplication.sharedApplication().openURL(URL)
+            
             
             _ = UIActivityViewController(activityItems: [firstActivityItem], applicationActivities: nil)
         }
@@ -265,7 +276,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     item_value.size = link_size!
                     item_value.lang += link_lang!.componentsSeparatedByString("_flag")
                     item_value.lang.removeLast()
-
                     tbl_line.append(item_value)
                     
                 }
@@ -285,9 +295,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func set_language_icon_by_uniqlang() {
         
-        for (index, element) in uniqlang.enumerate() {
+        for (_, element) in uniqlang.enumerate() {
             if ("\(element)") == "d"{
                 language_icon.append("\u{1f1e9}\u{1f1ea}")
+            }else if ("\(element)") == "all"{
+                language_icon.append("\u{1F30E}")
             }
             else if ("\(element)") == "e"{
                 language_icon.append("\u{1F1EC}\u{1F1E7}")
@@ -303,11 +315,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
             else if ("\(element)") == "r"{
                 language_icon.append("\u{1F1F7}\u{1F1FA}")
+            }else if ("\(element)") == "tr"{
+                language_icon.append("\u{1F1F9}\u{1F1F7}")
             }
             else {
                 language_icon.append("\(element)")
             }
         }
+    }
+    
+    func changetitle(value:String) {
+        let item = self.navigationItem.leftBarButtonItem
+        let button = item!.customView as! UIButton
+        button.setTitle(value, forState:.Normal)
+    }
+    func changetitle2(value:String) {
+        let item = self.navigationItem.rightBarButtonItem
+        let button = item!.customView as! UIButton
+        button.setTitle(value, forState:.Normal)
     }
     
 }
