@@ -1,0 +1,70 @@
+/* textview about elreha */
+"ABOUT ELREHA GmbH 
+ ----------------
+ ELREHA (Elektronische Regelungen GmbH) was established in 1976. We are an international leader in development, production and sales of electronic controllers and control systems, for industrial and commercial needs in heating, refrigeration and freezing applications. Our Hockenheim-Germany facility is home to all of our operations, including Sales, Design, Manufacturing, and Distribution. Our global footprint spans across 3 continents, with additional manufacturing and operations in the USA and Jordan, and a sales office in France. Our global network includes partners in Austria, Switzerland and the Netherlands with a total number of 300 employees. We can guarantee the best service for our customers with our widespread global knowledge, capacity, and capabilities. Our entire product portfolio, which ranges from individual customized electrical cabinets, to standardized temperature sensors and controllers, are engineered and manufactured with advanced production technologies in Hockenheim. As an added point of great pride, we also have the unique advantage of producing our own PCBs. Our corporate philosophies drive our services, and innovations to the highest standards in quality and reliability. That is the value that we bring to you." = "ELREHA GmbH HAKKINDA
+ ----------------
+ELREHA GmbH, endüstriyel ve ticari soğutma uygulamaları için elektronik kontrol sistemleri ve kontrolör üretimi yapmak üzere 1976 yılında kurulmuştur. 25 yıl boyunca sıcaklık kontrol sistemleri alanında lider olmuştur ve bünyesinde bugün 300 çalışanı bulunmaktadır. Süpermarket, gıda üretim fabrikaları veya restoran zincirleri olsun hiç fark etmez - Amacımız müşterilerimizin elektronik çözümlerdeki teknik ve uygulama uzmanlığımızdan faydalanmasıdır. Bu süre içerisinde ürün inovasyonu, gelişim, kalite ve müşteri hizmetleri alanlarında sağlam bir imajı elde ettik. ELREHA'nın önceliği daima kalitedir. Bu kaliteyi sunabilmek için üretimin her safhası DIN EN ISO 9001:2008 sertifikalıdır. Yıllar içinde ELREHA, kaliteli ürünlerin adresi olma imajını elde etti. Müşteri hizmetlerimiz satıştan sonra da her ihtiyaç duyduğunuzda yanınızdadır.";
+
+/* alertController title_app */
+"About Elreha App" = "Elreha App  Hakkında";
+
+/* alertController title_gmbh */
+"About Elreha GmbH" = "Elreha GmbH Hakkında";
+
+/* alertController title_close */
+"Close" = "Kapat";
+
+/* textview about elreha app */
+"ELREHA APP 
+ Version 1.0 
+ ----------------
+ ELREHA (Elektronische Regelungen GmbH) was established in 1976. We are an international leader in development, production and sales of electronic controllers and control systems, for industrial and commercial needs in heating, refrigeration and freezing applications. Our entire product portfolio, which ranges from individual customized electrical cabinets, to standardized temperature sensors and controllers, are engineered and manufactured with advanced production technologies in Hockenheim. The ELREHA App. was designed to provide you the ability to download our manuals with the utmost convenience. Try it for yourself!" = "ELREHA APP
+Version 1.0
+----------------
+ELREHA GmbH, endüstriyel ve ticari soğutma uygulamaları için elektronik kontrol sistemleri ve kontrolör üretimi yapmak üzere 1976 yılında kurulmuştur. Süpermarket, gıda üretim fabrikaları veya restoran zincirleri olsun hiç fark etmez - Amacımız müşterilerimizin elektronik çözümlerdeki teknik ve uygulama uzmanlığımızdan faydalanmasıdır. Bu uygulama ile cihazlarımızın kullanım kılavuzlarını rahatlıkla  indirebilirsiniz. Haydi gelin ve deneyin!";
+
+/* textview about impressum */
+"LEGAL NOTICE 
+
+ ELREHA Elektronische Regelungen GmbH Schwetzinger Str. 103 
+ D-68766 Hockenheim 
+ Tel: (+49) (0)6205-2009-0
+ Fax: (+49) (0)6205-2009-39
+ E-Mail: sales@elreha.de
+ ----------------
+ Commercial register of the Local Court of Mannheim 
+ HRB 420487 
+ ----------------
+ Managing Director
+ A. Hamadeh
+ ----------------
+ Tax Id 
+ DE 144 301 436 
+ ----------------
+ Visit our homepage for more info: 
+ www.elreha.de" = "YASAL UYARI
+            
+ELREHA Elektronische Regelungen GmbH Schwetzinger Str. 103
+D-68766 Hockenheim
+Tel: (+49) (0)6205-2009-0
+Fax: (+49) (0)6205-2009-39
+E-Mail: sales@elreha.de
+----------------
+Mannheim Yerel Mahkemesi ticari defter
+HRB 420487
+----------------
+Genel Müdür
+A. Hamadeh
+----------------
+Muamele Vergi No.
+DE 144 301 436
+----------------
+Daha fazla bilgi için internet sayfamızı ziyaret edin:
+www.elreha.de";
+
+/* alertController title_ln */
+"Legal Notice " = "Yasal Uyarı";
+
+/* alertController title_open */
+"Open" = "Aç";
+

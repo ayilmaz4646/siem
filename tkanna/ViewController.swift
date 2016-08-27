@@ -32,6 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var listLangActive:Bool = false
     var listLangPickerActive:Bool = true
     var docController: UIDocumentInteractionController?
+    var title_close = NSLocalizedString("Close", comment: "alertController title_close")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,8 +62,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         uniqlang = Array(Set(language)).sort()
         tbl_temp = tbl_line
         set_language_icon_by_uniqlang()
-        changetitle(language_icon[0])
-        changetitle2("\u{2139}")
+        changetitleleft("\u{2139}")
+//        let blueColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 255/255.0, alpha: 1.0)
+//        view.backgroundColor = blueColor
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -73,6 +75,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let image = UIImage(named: "elrehaLogo")
         imageView.image = image
         navigationItem.titleView = imageView
+        let item = self.navigationItem.leftBarButtonItem
+        let button = item!.customView as! UIButton
+        button.setTitle("\u{1F30E}", forState:.Normal)
     }
     
     func imageTapped(img: AnyObject){}
@@ -92,21 +97,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func segueButton(sender: AnyObject) {
         let actionSheet = UIAlertController()
-        let impAction = UIAlertAction(title: "Impressum", style: UIAlertActionStyle.Default) { (action) -> Void in
+
+        let title_ln = NSLocalizedString("Legal Notice ", comment: "alertController title_ln")
+        let impAction = UIAlertAction(title: title_ln, style: UIAlertActionStyle.Default) { (action) -> Void in
             let text = "impressum"
             self.performSegueWithIdentifier("segue", sender: text)
         }
-        
-        let aboutAction = UIAlertAction(title: "About Elreha GmbH", style: UIAlertActionStyle.Default) { (action) -> Void in
+
+        let title_gmbh = NSLocalizedString("About Elreha GmbH", comment: "alertController title_gmbh")
+        let aboutAction = UIAlertAction(title: title_gmbh, style: UIAlertActionStyle.Default) { (action) -> Void in
             let text = "aboutelreha"
             self.performSegueWithIdentifier("segue", sender: text)
         }
-        let aboutappAction = UIAlertAction(title: "About Elreha App", style: UIAlertActionStyle.Default) { (action) -> Void in
+
+        let title_app = NSLocalizedString("About Elreha App", comment: "alertController title_app")
+        let aboutappAction = UIAlertAction(title: title_app, style: UIAlertActionStyle.Default) { (action) -> Void in
             let text = "aboutelrehaapp"
             self.performSegueWithIdentifier("segue", sender: text)
         }
-        
-        let dismissAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (action) -> Void in}
+
+        let dismissAction = UIAlertAction(title: title_close, style: UIAlertActionStyle.Cancel) { (action) -> Void in}
 
         actionSheet.addAction(impAction)
         actionSheet.addAction(aboutAction)
@@ -167,7 +177,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
             listLangActive = true
         }
-        changetitle(language_icon[row])
+        changetitleright(language_icon[row])
         
         self.tableView.reloadData()
         
@@ -202,7 +212,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 $0.title.rangeOfString(searchText, options: .CaseInsensitiveSearch) != nil
             }
         }
-        
         self.tableView.reloadData()
     }
 
@@ -228,7 +237,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let actionSheet = UIAlertController()
-        let openAction = UIAlertAction(title: "Open (\(self.tbl_temp[indexPath.row].size))", style: UIAlertActionStyle.Default) { (action) -> Void in
+        let title_open = NSLocalizedString("Open", comment: "alertController title_open")
+        let openAction = UIAlertAction(title: title_open + "(\(self.tbl_temp[indexPath.row].size))", style: UIAlertActionStyle.Default) { (action) -> Void in
             let stringUrl = self.tbl_temp[indexPath.row].link
             let URL = NSURL(string: stringUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
             let firstActivityItem = UIApplication.sharedApplication().openURL(URL)
@@ -236,8 +246,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             _ = UIActivityViewController(activityItems: [firstActivityItem], applicationActivities: nil)
         }
-        
-        let dismissAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (action) -> Void in}
+
+        let dismissAction = UIAlertAction(title: title_close, style: UIAlertActionStyle.Cancel) { (action) -> Void in}
         
         actionSheet.addAction(openAction)
         actionSheet.addAction(dismissAction)
@@ -257,7 +267,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
-
+    
+//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+//        let blueColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 255/255.0, alpha: 1.0)
+//        cell.backgroundColor = blueColor
+//    }
     
     func htmlParserWithKanna(url:String)
     {
@@ -324,12 +338,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    func changetitle(value:String) {
+    func changetitleright(value:String) {
         let item = self.navigationItem.leftBarButtonItem
         let button = item!.customView as! UIButton
         button.setTitle(value, forState:.Normal)
     }
-    func changetitle2(value:String) {
+    func changetitleleft(value:String) {
         let item = self.navigationItem.rightBarButtonItem
         let button = item!.customView as! UIButton
         button.setTitle(value, forState:.Normal)

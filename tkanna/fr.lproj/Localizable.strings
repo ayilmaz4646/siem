@@ -1,0 +1,70 @@
+/* textview about elreha */
+"ABOUT ELREHA GmbH 
+ ----------------
+ ELREHA (Elektronische Regelungen GmbH) was established in 1976. We are an international leader in development, production and sales of electronic controllers and control systems, for industrial and commercial needs in heating, refrigeration and freezing applications. Our Hockenheim-Germany facility is home to all of our operations, including Sales, Design, Manufacturing, and Distribution. Our global footprint spans across 3 continents, with additional manufacturing and operations in the USA and Jordan, and a sales office in France. Our global network includes partners in Austria, Switzerland and the Netherlands with a total number of 300 employees. We can guarantee the best service for our customers with our widespread global knowledge, capacity, and capabilities. Our entire product portfolio, which ranges from individual customized electrical cabinets, to standardized temperature sensors and controllers, are engineered and manufactured with advanced production technologies in Hockenheim. As an added point of great pride, we also have the unique advantage of producing our own PCBs. Our corporate philosophies drive our services, and innovations to the highest standards in quality and reliability. That is the value that we bring to you." = "O Elreha GmbH
+----------------
+ELREHA (Elektronische Regelungen GmbH) a été créé en 1976. Nous sommes un leader international dans le développement, la production et les ventes de contrôleurs électroniques et les systèmes de contrôle, pour les besoins industriels et commerciaux dans les applications de chauffage, de réfrigération et de congélation. Notre établissement Hockenheim-Allemagne abrite toutes nos activités, y compris les ventes, la conception, la fabrication, et la distribution. Notre empreinte mondiale est étendue sur 3 continents, avec les fabrication supplémentaires et des opérations aux Etats-Unis et en Jordanie, et un bureau de vente en France. Notre réseau mondial comprend des partenaires en Autriche, en Suisse et aux Pays-Bas avec un nombre total de 300 employés. Nous pouvons vous garantir le meilleur service pour nos clients avec nos répandues mondiales nos connaissances et nos capacités. Notre portefeuille de produits, qui va des armoires électriques sur mesure individuelles, des capteurs et des régulateurs de température normalisés, sont conçus et fabriqués avec des technologies de production de pointe à Hockenheim. Comme un point de grande fierté ajoutée, nous avons aussi l'avantage unique de produire nos propres circuits PCB. Nos philosophies d'entreprise conduisent nos services et innovations aux normes les plus élevées en matière de qualité et de fiabilité. Telle est la valeur que nous vous apportons.";
+
+/* alertController title_app */
+"About Elreha App" = "A Propos De Elreha App";
+
+/* alertController title_gmbh */
+"About Elreha GmbH" = "A Propos De Elreha GmbH ";
+
+/* alertController title_close */
+"Close" = "Fermer";
+
+/* textview about elreha app */
+"ELREHA APP 
+ Version 1.0 
+ ----------------
+ ELREHA (Elektronische Regelungen GmbH) was established in 1976. We are an international leader in development, production and sales of electronic controllers and control systems, for industrial and commercial needs in heating, refrigeration and freezing applications. Our entire product portfolio, which ranges from individual customized electrical cabinets, to standardized temperature sensors and controllers, are engineered and manufactured with advanced production technologies in Hockenheim. The ELREHA App. was designed to provide you the ability to download our manuals with the utmost convenience. Try it for yourself!" = "ELREHA APP
+Version 1.0
+----------------
+ELREHA (Elektronische Regelungen GmbH) a été créé en 1976. Nous sommes un leader international dans le développement, la production et les ventes de contrôleurs électroniques et les systèmes de contrôle, pour les besoins industriels et commerciaux dans les applications de chauffage, de réfrigération et de congélation. Notre portefeuille de produits, qui va des armoires électriques sur mesure individuelles, des capteurs et des régulateurs de température normalisés, qui sont conçus et fabriqués avec des technologies de production avancées à Hockenheim. Avec cette application, nous vous offrons la possibilité de télécharger nos manuels d'une manière confortable. Essayez-le vous-même! ";
+
+/* textview about impressum */
+"LEGAL NOTICE 
+
+ ELREHA Elektronische Regelungen GmbH Schwetzinger Str. 103 
+ D-68766 Hockenheim 
+ Tel: (+49) (0)6205-2009-0
+ Fax: (+49) (0)6205-2009-39
+ E-Mail: sales@elreha.de
+ ----------------
+ Commercial register of the Local Court of Mannheim 
+ HRB 420487 
+ ----------------
+ Managing Director
+ A. Hamadeh
+ ----------------
+ Tax Id 
+ DE 144 301 436 
+ ----------------
+ Visit our homepage for more info: 
+ www.elreha.de" = "MENTION LÉGALE
+            
+ELREHA Elektronische Regelungen GmbH Schwetzinger Str. 103
+D-68766 Hockenheim
+Tel: (+49) (0)6205-2009-0
+Fax: (+49) (0)6205-2009-39
+E-Mail: sales@elreha.de
+----------------
+Registre du commerce de la Cour locale de Mannheim
+HRB 420487
+----------------
+Directeur Général
+A. Hamadeh
+----------------
+Numéro d'identification fiscale
+DE 144 301 436
+----------------
+Visitez notre page d'accueil pour plus d'info.
+www.elreha.de";
+
+/* alertController title_ln */
+"Legal Notice " = "Mention Légale ";
+
+/* alertController title_open */
+"Open" = "Ouvrir";
+
