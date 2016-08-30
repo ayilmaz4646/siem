@@ -42,7 +42,7 @@ ELREHA Elektronische Regelungen GmbH od jej utworzenia w roku 1976 przekształci
  DE 144 301 436 
  ----------------
  Visit our homepage for more info: 
- www.elreha.de" = "Stopka/Ogłoszenie/Nota
+ www.elreha.de" = "NOTA
             
 ELREHA Elektronische Regelungen GmbH Schwetzinger Str. 103
 D-68766 Hockenheim
@@ -63,7 +63,7 @@ Odwiedź naszą stronę domową dla uzyskania więcej informacji:
 www.elreha.de";
 
 /* alertController title_ln */
-"Legal Notice " = "Stopka/Ogłoszenie/Nota";
+"Legal Notice " = "Nota";
 
 /* alertController title_open */
 "Open" = "Otworzyć";
