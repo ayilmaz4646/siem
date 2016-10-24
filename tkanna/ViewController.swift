@@ -95,6 +95,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    @IBAction func okbutton(sender: AnyObject) {
+        pickerViewContainer.hidden = true
+        newPicker.hidden = true
+        listLangPickerActive = true
+    }
+    
     @IBAction func segueButton(sender: AnyObject) {
         let actionSheet = UIAlertController()
 
@@ -110,7 +116,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.performSegueWithIdentifier("segue", sender: text)
         }
 
-        let title_app = NSLocalizedString("About Elreha App", comment: "alertController title_app")
+        let title_app = NSLocalizedString("About Elreha Manuals", comment: "alertController title_app")
         let aboutappAction = UIAlertAction(title: title_app, style: UIAlertActionStyle.Default) { (action) -> Void in
             let text = "aboutelrehaapp"
             self.performSegueWithIdentifier("segue", sender: text)

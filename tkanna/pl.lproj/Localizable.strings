@@ -5,23 +5,23 @@
  ----------------
 ELREHA (Elektronische Regelungen GmbH) został założony w 1976. Jesteśmy międzynarodowym liderem w rozwoju, produkcji i handlu elektronicznymi kontrolerami i  systemami sterowania w chłodnictwie i technice klimatyzacyjnej, dla zapotrzebowania przemysłowego i handlowego. Z naszymi siedzibami w Hockenheim (ok. 100 współpracowników) oraz w USA, Francji i Jordanii i z naszymi partnerami współpracującymi w Austrii, Szwajcarii i Holandii tworzymy globalną sieć korporacyjną z przeszło 300 współpracownikami. Gwarantujemy najlepszy serwis dla swoich klientów z naszą rozpowszechnioną globalną wiedzą, pojemnością, i zdolnościami. Nasz cały portfel produktów, który obejmuje od indywidualnych wykonanych na zamówienie elektrycznych szafek do wystandaryzowanych czujników temperatury i kontrolerów, są skonstruowane i wyprodukowane zaawansowanymi technologiami w Hockenheim. Własna produkcja płytek drukowanych jest kamieniem węgielnym dla technicznie bardzo nowoczesnych i niezawodnych produktów. Nasi klienci zyskują na know-how naszej globalnej sieci. Naszym życzeniem jest uzyskanie zadowolenia klientów poprzez świadczenie indywidualnych usług na nowatorskie produkty oraz osiągnięcie ich największej sprawności i jakości. Stawiamy na nasz wykwalifikowany personel i regularną certyfikację zakładowych procesów zgodnie z normami  DIN EN ISO 9001:2008. Jesteśmy najbardziej kompetentnym i rzetelnym partnerem we wszystkich interesach w obszarze chłodnictwa i techniki klimatyzacyjnej.";
 
-/* alertController title_app */
-"About Elreha App" = "O Elreha App";
-
 /* alertController title_gmbh */
 "About Elreha GmbH" = "O Elreha GmbH";
 
-/* alertController title_close */
-"Close" = "Zamknąć";
+/* alertController title_app */
+"About Elreha Manuals" = "O Elreha Manuals";
 
 /* textview about elreha app */
-"ELREHA APP 
+"About Elreha Manuals 
  Version 1.0 
  ----------------
- ELREHA (Elektronische Regelungen GmbH) was established in 1976. We are an international leader in development, production and sales of electronic controllers and control systems, for industrial and commercial needs in heating, refrigeration and freezing applications. Our entire product portfolio, which ranges from individual customized electrical cabinets, to standardized temperature sensors and controllers, are engineered and manufactured with advanced production technologies in Hockenheim. The ELREHA App. was designed to provide you the ability to download our manuals with the utmost convenience. Try it for yourself!" = "ELREHA APP
+ ELREHA (Elektronische Regelungen GmbH) was established in 1976. We are an international leader in development, production and sales of electronic controllers and control systems, for industrial and commercial needs in heating, refrigeration and freezing applications. Our entire product portfolio, which ranges from individual customized electrical cabinets, to standardized temperature sensors and controllers, are engineered and manufactured with advanced production technologies in Hockenheim. The ELREHA App. was designed to provide you the ability to download our manuals with the utmost convenience. Try it for yourself!" = "O Elreha Manuals
 Version 1.0
 ----------------
-ELREHA Elektronische Regelungen GmbH od jej utworzenia w roku 1976 przekształciła się w międzynarodowego lidera w rozwoju, produkcji i handlu elektronicznymi kontrolerami i  systemami sterowania w chłodnictwie i technice klimatyzacyjnej, dla przemysłu i handlu. Nasze wszystkie produkty, które obejmują indywidualnie wykonane na zamówienie szafki sterujące, regulatory oraz czujki temperatury są opracowywane i produkowane na bazie zaawansowanych maszyn i technologii w Hockenheim. Z App dajemy Państwu możliwość ściągnięcia naszej instrukcji obsługi. Spróbujcie Państwo! ";
+ELREHA Elektronische Regelungen GmbH od jej utworzenia w roku 1976 przekształciła się w międzynarodowego lidera w rozwoju, produkcji i handlu elektronicznymi kontrolerami i  systemami sterowania w chłodnictwie i technice klimatyzacyjnej, dla przemysłu i handlu. Nasze wszystkie produkty, które obejmują indywidualnie wykonane na zamówienie szafki sterujące, regulatory oraz czujki temperatury są opracowywane i produkowane na bazie zaawansowanych maszyn i technologii w Hockenheim. Z App dajemy Państwu możliwość ściągnięcia naszej instrukcji obsługi. Spróbujcie Państwo!";
+
+/* alertController title_close */
+"Close" = "Zamknąć";
 
 /* textview about impressum */
 "LEGAL NOTICE 

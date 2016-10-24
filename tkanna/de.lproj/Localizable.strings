@@ -5,23 +5,23 @@
 ----------------
 Die ELREHA Elektronische Regelungen GmbH hat sich seit ihrer Gründung im Jahre 1976 zu einem der führenden Spezialisten und Hersteller für elektronische Regelungs- und Steuerungssysteme für die Kälte- und Klimatechnik entwickelt.Mit unseren Standorten in Hockenheim (ca. 100 Mitarbeiter) sowie in den USA, Frankreich und Jordanien und unseren Kooperationspartnern in Österreich, der Schweiz und den Niederlanden bilden wir ein globales Unternehmensnetzwerk mit mehr als 300 Mitarbeitern. Sämtliche Produkte, vom individuellen Schaltschrank bis hin zu Standardprodukten, wie Temperaturregler und -fühler werden in unserem Werk in Hockenheim mit modernsten Methoden und Maschinen entwickelt und produziert. Eine eigene Leiterplattenproduktion ist der Grundstein für technisch hochmoderne und zuverlässige Produkte. Unsere Kunden profitieren vom Know-how unseres globalen Netzwerkes. Unser Anspruch ist es, durch individuelle Serviceleistungen, innovative Produkte, höchste Zuverlässigkeit und höchsten Qualitätsanspruch unsere Kunden zu begeistern. Dies stellen wir durch unser geschultes Personal und der regelmäßigen Zertifizierung der betrieblichen Abläufe nach DIN EN ISO 9001:2008 sicher. Wir sind Ihr kompetenter und zuverlässiger Partner in allen Belangen im Bereich Kälte- und Klimatechnik.";
 
-/* alertController title_app */
-"About Elreha App" = "Über die Elreha App";
-
 /* alertController title_gmbh */
 "About Elreha GmbH" = "Über Elreha GmbH";
 
-/* alertController title_close */
-"Close" = "Schließen";
+/* alertController title_app */
+"About Elreha Manuals" = "Über Elreha Manuals";
 
 /* textview about elreha app */
-"ELREHA APP 
+"About Elreha Manuals 
  Version 1.0 
  ----------------
- ELREHA (Elektronische Regelungen GmbH) was established in 1976. We are an international leader in development, production and sales of electronic controllers and control systems, for industrial and commercial needs in heating, refrigeration and freezing applications. Our entire product portfolio, which ranges from individual customized electrical cabinets, to standardized temperature sensors and controllers, are engineered and manufactured with advanced production technologies in Hockenheim. The ELREHA App. was designed to provide you the ability to download our manuals with the utmost convenience. Try it for yourself!" = "ELREHA APP
+ ELREHA (Elektronische Regelungen GmbH) was established in 1976. We are an international leader in development, production and sales of electronic controllers and control systems, for industrial and commercial needs in heating, refrigeration and freezing applications. Our entire product portfolio, which ranges from individual customized electrical cabinets, to standardized temperature sensors and controllers, are engineered and manufactured with advanced production technologies in Hockenheim. The ELREHA App. was designed to provide you the ability to download our manuals with the utmost convenience. Try it for yourself!" = "Über Elreha Manuals
 Version 1.0
 ----------------
 Die ELREHA Elektronische Regelungen GmbH hat sich seit ihrer Gründung im Jahre 1976 zu einem der führenden Spezialisten und Hersteller für elektronische Regelungs- und Steuerungssysteme für die Kälte- und Klimatechnik entwickelt. Sämtliche Produkte, vom individuellen Schaltschrank bis hin zu Standardprodukten, wie Temperaturregler und -fühler werden in unserem Werk in Hockenheim mit modernsten Methoden und Maschinen entwickelt und produziert. Mit dieser App bieten wir Ihnen die Möglichkeit, unsere Bedienungsanleitungen bequem runterzuladen. Probieren Sie es aus!";
+
+/* alertController title_close */
+"Close" = "Schließen";
 
 /* textview about impressum */
 "LEGAL NOTICE 

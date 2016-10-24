@@ -5,23 +5,23 @@
  ----------------
 ELREHA GmbH, endüstriyel ve ticari soğutma uygulamaları için elektronik kontrol sistemleri ve kontrolör üretimi yapmak üzere 1976 yılında kurulmuştur. 25 yıl boyunca sıcaklık kontrol sistemleri alanında lider olmuştur ve bünyesinde bugün 300 çalışanı bulunmaktadır. Süpermarket, gıda üretim fabrikaları veya restoran zincirleri olsun hiç fark etmez - Amacımız müşterilerimizin elektronik çözümlerdeki teknik ve uygulama uzmanlığımızdan faydalanmasıdır. Bu süre içerisinde ürün inovasyonu, gelişim, kalite ve müşteri hizmetleri alanlarında sağlam bir imajı elde ettik. ELREHA'nın önceliği daima kalitedir. Bu kaliteyi sunabilmek için üretimin her safhası DIN EN ISO 9001:2008 sertifikalıdır. Yıllar içinde ELREHA, kaliteli ürünlerin adresi olma imajını elde etti. Müşteri hizmetlerimiz satıştan sonra da her ihtiyaç duyduğunuzda yanınızdadır.";
 
-/* alertController title_app */
-"About Elreha App" = "Elreha App  Hakkında";
-
 /* alertController title_gmbh */
 "About Elreha GmbH" = "Elreha GmbH Hakkında";
 
-/* alertController title_close */
-"Close" = "Kapat";
+/* alertController title_app */
+"About Elreha Manuals" = "Elreha Manuals Hakkında";
 
 /* textview about elreha app */
-"ELREHA APP 
+"About Elreha Manuals 
  Version 1.0 
  ----------------
- ELREHA (Elektronische Regelungen GmbH) was established in 1976. We are an international leader in development, production and sales of electronic controllers and control systems, for industrial and commercial needs in heating, refrigeration and freezing applications. Our entire product portfolio, which ranges from individual customized electrical cabinets, to standardized temperature sensors and controllers, are engineered and manufactured with advanced production technologies in Hockenheim. The ELREHA App. was designed to provide you the ability to download our manuals with the utmost convenience. Try it for yourself!" = "ELREHA APP
+ ELREHA (Elektronische Regelungen GmbH) was established in 1976. We are an international leader in development, production and sales of electronic controllers and control systems, for industrial and commercial needs in heating, refrigeration and freezing applications. Our entire product portfolio, which ranges from individual customized electrical cabinets, to standardized temperature sensors and controllers, are engineered and manufactured with advanced production technologies in Hockenheim. The ELREHA App. was designed to provide you the ability to download our manuals with the utmost convenience. Try it for yourself!" = "Elreha Manuals Hakkında
 Version 1.0
 ----------------
 ELREHA GmbH, endüstriyel ve ticari soğutma uygulamaları için elektronik kontrol sistemleri ve kontrolör üretimi yapmak üzere 1976 yılında kurulmuştur. Süpermarket, gıda üretim fabrikaları veya restoran zincirleri olsun hiç fark etmez - Amacımız müşterilerimizin elektronik çözümlerdeki teknik ve uygulama uzmanlığımızdan faydalanmasıdır. Bu uygulama ile cihazlarımızın kullanım kılavuzlarını rahatlıkla  indirebilirsiniz. Haydi gelin ve deneyin!";
+
+/* alertController title_close */
+"Close" = "Kapat";
 
 /* textview about impressum */
 "LEGAL NOTICE 

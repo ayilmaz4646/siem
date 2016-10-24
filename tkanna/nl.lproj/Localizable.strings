@@ -5,23 +5,24 @@
  ----------------
  ELREHA Electronische Regelingen GmbH heeft zich sinds de opgerichting in 1976 gespecialiseerd in het ontwikkelen, produceren en verkopen van electronische regel- en besturings- systemen voor industriële en commerciële koude, koeling en verwarming toepassingen. Vanuit de basis in Hockenheim (D) met ca. 100 medewerkers, vormen we met vestigingen in USA, Jordanië en Frankrijk en de verkoopkantoren in Ooostenrijk, Zwitserland, en Nederland een onderneming van meer dan 300 medewerkers. Producten varierend van maatwerk schakelkasten tot standaard temperatuurregelaars met bijbehorende voelers, worden in de fabriek in Hockenheim met de modernste  methoden en machines ontwikkeld en geproduceerd. Onze eigen PCB productie is de basis van een hoogwaardige moderne productrange. Klanten profiteren van onze know-how en globale netwerken waarbij uitstekende service en optimale betrouwbaarheid hoog in ons vaandel staan. ELREHA is DIN EN ISO 9001:2008 gecertificeerd.";
 
-/* alertController title_app */
-"About Elreha App" = "Over De Elreha App";
-
 /* alertController title_gmbh */
 "About Elreha GmbH" = "Over Elreha";
 
-/* alertController title_close */
-"Close" = "Sluiten";
+/* alertController title_app */
+"About Elreha Manuals" = "Over Elreha Manuals";
 
 /* textview about elreha app */
-"ELREHA APP 
+"About Elreha Manuals 
  Version 1.0 
  ----------------
- ELREHA (Elektronische Regelungen GmbH) was established in 1976. We are an international leader in development, production and sales of electronic controllers and control systems, for industrial and commercial needs in heating, refrigeration and freezing applications. Our entire product portfolio, which ranges from individual customized electrical cabinets, to standardized temperature sensors and controllers, are engineered and manufactured with advanced production technologies in Hockenheim. The ELREHA App. was designed to provide you the ability to download our manuals with the utmost convenience. Try it for yourself!" = "ELREHA APP
+ ELREHA (Elektronische Regelungen GmbH) was established in 1976. We are an international leader in development, production and sales of electronic controllers and control systems, for industrial and commercial needs in heating, refrigeration and freezing applications. Our entire product portfolio, which ranges from individual customized electrical cabinets, to standardized temperature sensors and controllers, are engineered and manufactured with advanced production technologies in Hockenheim. The ELREHA App. was designed to provide you the ability to download our manuals with the utmost convenience. Try it for yourself!" = "Over Elreha Manuals
 Version 1.0
 ----------------
-ELREHA Electronische Regelingen GmbH heeft zich sinds de opgerichting in 1976 gespecialiseerd in het ontwikkelen, produceren en verkopen van electronische regel- en besturings- systemen voor industriële en commerciële koude, koeling en verwarming toepassingen. Vanuit de basis in Hockenheim (D) worden producten varierend van maatwerk schakelkasten tot standaard temperatuurregelaars met bijbehorende voelers ontwikkeld en geproduceerd. Met deze App bieden wij u de mogelijkheid om onze bedieningshandleidingen snel en gemakkelijk te downloaden. Probeer het!";
+ELREHA Electronische Regelingen GmbH heeft zich sinds de opgerichting in 1976 gespecialiseerd in het ontwikkelen,
+produceren en verkopen van electronische regel- en besturings- systemen voor industriële en commerciële koude, koeling en verwarming toepassingen. Vanuit de basis in Hockenheim (D) worden producten varierend van maatwerk schakelkasten tot standaard temperatuurregelaars met bijbehorende voelers ontwikkeld en geproduceerd. Met deze App bieden wij u de mogelijkheid om onze bedieningshandleidingen snel en gemakkelijk te downloaden. Probeer het!";
+
+/* alertController title_close */
+"Close" = "Sluiten";
 
 /* textview about impressum */
 "LEGAL NOTICE 
