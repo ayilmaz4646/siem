@@ -24,7 +24,7 @@
 		5CC2C7D91D723CCF00082983 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CC2C7DB1D723CCF00082983 /* Localizable.strings */; };
 		5CD11D8C1D390AF50009AFED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CD11D8A1D390AF50009AFED /* Main.storyboard */; };
 		A2BF32A10CE49D51722DD380 /* Pods_tkannaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB267392B71BDA574D179177 /* Pods_tkannaUITests.framework */; };
-		D069B9EA672A0761DE39CE07 /* Pods_tkanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFCECD26CE3B2DF54B4B97F /* Pods_tkanna.framework */; };
+		D069B9EA672A0761DE39CE07 /* Pods_tkanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFCECD26CE3B2DF54B4B97F /* Pods_tkanna.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -292,13 +292,16 @@
 					5C7A8C801D1557B5002DA4B7 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 7L99NCXZ7M;
+						LastSwiftMigration = 0900;
 					};
 					5C7A8C941D1557B6002DA4B7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0900;
 						TestTargetID = 5C7A8C801D1557B5002DA4B7;
 					};
 					5C7A8C9F1D1557B6002DA4B7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0900;
 						TestTargetID = 5C7A8C801D1557B5002DA4B7;
 					};
 				};
@@ -637,11 +640,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -676,9 +680,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -696,6 +701,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.swift.tkanna;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -713,6 +720,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.swift.tkanna;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -726,6 +735,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.swift.tkannaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tkanna.app/tkanna";
 			};
 			name = Debug;
@@ -739,6 +750,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.swift.tkannaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tkanna.app/tkanna";
 			};
 			name = Release;
@@ -751,6 +764,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.swift.tkannaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = tkanna;
 			};
 			name = Debug;
@@ -763,6 +778,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.swift.tkannaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = tkanna;
 			};
 			name = Release;

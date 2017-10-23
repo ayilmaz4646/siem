@@ -1,0 +1,6 @@
+framework module Pods_tkanna {
+  umbrella header "Pods-tkanna-umbrella.h"
+
+  export *
+  module * { export * }
+}

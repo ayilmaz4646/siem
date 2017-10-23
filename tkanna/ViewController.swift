@@ -9,7 +9,7 @@
 import UIKit
 import Kanna
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIDocumentInteractionControllerDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIDocumentInteractionControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var newPicker: UIPickerView!
@@ -37,47 +37,48 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         if Reachability.isConnectedToNetwork() == false {
-            let alert = UIAlertController(title: "No Internet", message: "You need an internet connection to use this app", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,
+            let alert = UIAlertController(title: "No Internet", message: "You need an internet connection to use this app", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,
                 handler: { ACTION in exit(0)}))
-            self.presentViewController(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
             
         }
-        htmlParserWithKanna("http://www.elreha.de/technische-handbucher-archiv/")
-        pickerViewContainer.hidden = true
-        newPicker.hidden = true
+        htmlParserWithKanna(url: "http://www.elreha.de/technische-handbucher-archiv/")
+        pickerViewContainer.isHidden = true
+        newPicker.isHidden = true
         
         tableView.delegate = self
         searchBar.delegate = self
-        searchBar.showsCancelButton = true
+//        searchBar.showsCancelButton = true
         tableView.dataSource = self
         newPicker.delegate = self
         newPicker.dataSource = self
         
-        for (title, _) in tbl_line.enumerate(){
+        for (title, _) in tbl_line.enumerated(){
             language.append("all")
-            language.append("tr")
+//            language.append("tr")
             language += tbl_line[title].lang
         }
-        uniqlang = Array(Set(language)).sort()
+        uniqlang = Array(Set(language)).sorted()
         tbl_temp = tbl_line
         set_language_icon_by_uniqlang()
-        changetitleleft("\u{2139}")
+        changetitleleft(value: "\u{2139}")
+        self.tableView.contentInset = UIEdgeInsets(top: 60, left: 0, bottom: 0, right: 0)
 //        let blueColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 255/255.0, alpha: 1.0)
 //        view.backgroundColor = blueColor
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         let nav = self.navigationController?.navigationBar
-        nav?.barStyle = UIBarStyle.Default
+        nav?.barStyle = UIBarStyle.default
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        imageView.contentMode = .ScaleAspectFit
+        imageView.contentMode = .scaleAspectFit
         let image = UIImage(named: "elrehaLogo")
         imageView.image = image
         navigationItem.titleView = imageView
         let item = self.navigationItem.leftBarButtonItem
         let button = item!.customView as! UIButton
-        button.setTitle("\u{1F30E}", forState:.Normal)
+        button.setTitle("\u{1F30E}", for: .normal)
     }
     
     func imageTapped(img: AnyObject){}
@@ -85,56 +86,56 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func langButton(sender: AnyObject) {
         if listLangPickerActive == true{
             listLangPickerActive = false
-            pickerViewContainer.hidden = false
-            newPicker.hidden = false
+            pickerViewContainer.isHidden = false
+            newPicker.isHidden = false
         }
         else{
             listLangPickerActive = true
-            pickerViewContainer.hidden = true
-            newPicker.hidden = true
+            pickerViewContainer.isHidden = true
+            newPicker.isHidden = true
         }
     }
     
     @IBAction func okbutton(sender: AnyObject) {
-        pickerViewContainer.hidden = true
-        newPicker.hidden = true
+        pickerViewContainer.isHidden = true
+        newPicker.isHidden = true
         listLangPickerActive = true
     }
-    
+
     @IBAction func segueButton(sender: AnyObject) {
         let actionSheet = UIAlertController()
 
         let title_ln = NSLocalizedString("Legal Notice ", comment: "alertController title_ln")
-        let impAction = UIAlertAction(title: title_ln, style: UIAlertActionStyle.Default) { (action) -> Void in
+        let impAction = UIAlertAction(title: title_ln, style: UIAlertActionStyle.default) { (action) -> Void in
             let text = "impressum"
-            self.performSegueWithIdentifier("segue", sender: text)
+            self.performSegue(withIdentifier: "segue", sender: text)
         }
 
         let title_gmbh = NSLocalizedString("About Elreha GmbH", comment: "alertController title_gmbh")
-        let aboutAction = UIAlertAction(title: title_gmbh, style: UIAlertActionStyle.Default) { (action) -> Void in
+        let aboutAction = UIAlertAction(title: title_gmbh, style: UIAlertActionStyle.default) { (action) -> Void in
             let text = "aboutelreha"
-            self.performSegueWithIdentifier("segue", sender: text)
+            self.performSegue(withIdentifier: "segue", sender: text)
         }
 
         let title_app = NSLocalizedString("About Elreha Manuals", comment: "alertController title_app")
-        let aboutappAction = UIAlertAction(title: title_app, style: UIAlertActionStyle.Default) { (action) -> Void in
+        let aboutappAction = UIAlertAction(title: title_app, style: UIAlertActionStyle.default) { (action) -> Void in
             let text = "aboutelrehaapp"
-            self.performSegueWithIdentifier("segue", sender: text)
+            self.performSegue(withIdentifier: "segue", sender: text)
         }
 
-        let dismissAction = UIAlertAction(title: title_close, style: UIAlertActionStyle.Cancel) { (action) -> Void in}
+        let dismissAction = UIAlertAction(title: title_close, style: UIAlertActionStyle.cancel) { (action) -> Void in}
 
         actionSheet.addAction(impAction)
         actionSheet.addAction(aboutAction)
         actionSheet.addAction(aboutappAction)
         actionSheet.addAction(dismissAction)
 
-        presentViewController(actionSheet, animated: true, completion: nil)
+        present(actionSheet, animated: true, completion: nil)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segue" {
-            let detailsVC = segue.destinationViewController as? detailsViewController
+            let detailsVC = segue.destination as? detailsViewController
             detailsVC?.selectedTitle = sender as? String
         }
     }
@@ -143,38 +144,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.didReceiveMemoryWarning()
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return uniqlang.count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return language_icon[row]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         searchBar.text = ""
         tbl_lang.removeAll()
         tbl_temp.removeAll()
-        let selectLang = uniqlang[pickerView.selectedRowInComponent(0)]
+        let selectLang = uniqlang[pickerView.selectedRow(inComponent: 0)]
 
         if selectLang == "all"
         {
             listLangActive = false
             tbl_temp = tbl_line
-        }else if selectLang == "tr"
-        {
-            listLangActive = true
-            tbl_lang.append(tbl_line[143])
-            tbl_temp.append(tbl_line[143])
         }
+//        else if selectLang == "tr"
+//        {
+//            listLangActive = true
+//            tbl_lang.append(tbl_line[143])
+//            tbl_temp.append(tbl_line[143])
+//        }
         else
         {
-            for (slang, _) in tbl_line.enumerate(){
-                if (tbl_line[slang].lang).indexOf(selectLang) != nil {
+            for (slang, _) in tbl_line.enumerated(){
+                if (tbl_line[slang].lang).index(of: selectLang) != nil {
                     tbl_lang.append(tbl_line[slang])
                     tbl_temp.append(tbl_line[slang])
                     
@@ -183,15 +185,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
             listLangActive = true
         }
-        changetitleright(language_icon[row])
+        changetitleright(value: language_icon[row])
         
         self.tableView.reloadData()
         
 
     }
     
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        searchBar.text = ""
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = nil
         searchBar.resignFirstResponder()
         if (listLangActive){
             tbl_temp = tbl_lang
@@ -202,7 +204,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if (searchText.isEmpty){
             self.tableView.reloadData()
             return
@@ -210,27 +212,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if (listLangActive){
             tbl_temp = tbl_lang.filter {
-                $0.title.rangeOfString(searchText, options: .CaseInsensitiveSearch) != nil
+                $0.title.range(of: searchText, options: .caseInsensitive) != nil
             }
         }
         else{
             tbl_temp = tbl_line.filter {
-                $0.title.rangeOfString(searchText, options: .CaseInsensitiveSearch) != nil
+                $0.title.range(of: searchText, options: .caseInsensitive) != nil
             }
         }
         self.tableView.reloadData()
     }
 
-    internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return tbl_temp.count
     }
     
-    internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        var cell = tableView.dequeueReusableCellWithIdentifier("mycell")! as UITableViewCell
-        if (cell.isEqual(NSNull)){
-            cell = NSBundle.mainBundle().loadNibNamed("mycell", owner: self, options: nil)[0] as! UITableViewCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: "mycell")! as UITableViewCell
+        if (cell.isEqual(NSNull())){
+            cell = Bundle.main.loadNibNamed("mycell", owner: self, options: nil)![0] as! UITableViewCell
         
         }
         cell.textLabel?.text = String(tbl_temp[indexPath.row].title)
@@ -240,37 +242,37 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let actionSheet = UIAlertController()
         let title_open = NSLocalizedString("Open", comment: "alertController title_open")
-        let openAction = UIAlertAction(title: title_open + "(\(self.tbl_temp[indexPath.row].size))", style: UIAlertActionStyle.Default) { (action) -> Void in
+        let openAction = UIAlertAction(title: title_open + "(\(self.tbl_temp[indexPath.row].size))", style: UIAlertActionStyle.default) { (action) -> Void in
             let stringUrl = self.tbl_temp[indexPath.row].link
-            let URL = NSURL(string: stringUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
-            let firstActivityItem = UIApplication.sharedApplication().openURL(URL)
+            let URL = NSURL(string: stringUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
+            let firstActivityItem = UIApplication.shared.openURL(URL as URL)
             
             
             _ = UIActivityViewController(activityItems: [firstActivityItem], applicationActivities: nil)
         }
 
-        let dismissAction = UIAlertAction(title: title_close, style: UIAlertActionStyle.Cancel) { (action) -> Void in}
+        let dismissAction = UIAlertAction(title: title_close, style: UIAlertActionStyle.cancel) { (action) -> Void in}
         
         actionSheet.addAction(openAction)
         actionSheet.addAction(dismissAction)
         
-        presentViewController(actionSheet, animated: true, completion: nil)
+        present(actionSheet, animated: true, completion: nil)
     }
 
-    func documentInteractionControllerDidDismissOpenInMenu(controller: UIDocumentInteractionController){
+    func documentInteractionControllerDidDismissOpenInMenu(_ controller: UIDocumentInteractionController){
         print("dissmissed")
 
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
     
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    internal func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
     
@@ -282,22 +284,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func htmlParserWithKanna(url:String)
     {
         
-        if let doc = Kanna.HTML(url: (NSURL(string: url)!), encoding: NSUTF8StringEncoding) {
+        if let doc = Kanna.HTML(url: (NSURL(string: url)! as URL), encoding: String.Encoding.utf8) {
             for tbl_tr in doc.xpath("//table[@id='tablepress-4']/tbody/tr") {
+                print(tbl_tr)
+                print(tbl_tr.text)
+                print(tbl_tr.at_css("td:nth-child(1)")?.text as Any)
+                print(tbl_tr.at_xpath("td[@class='column-2']/a/@href")?.text)
+                print(tbl_tr.at_xpath("td/img/@alt")?.text as Any)
+                print(tbl_tr.at_xpath("td[@class='column-9']")?.text as Any)
+                if ((tbl_tr.at_xpath("td[@class='column-2']/a/@href")?.text) != nil ){
+                    print("AAAAAAAAAAAAAAA")
+                }
 
-                let link_label = tbl_tr.css("td:nth-child(1)").text
-                let link_url   = tbl_tr.xpath("td[@class='column-2']/a/@href").text
-                let link_lang  = tbl_tr.xpath("td/img/@alt").text
-                let link_size  = tbl_tr.xpath("td[@class='column-9']").text
+                let link_label = tbl_tr.at_css("td:nth-child(1)")?.text as Any
+                let link_url   = tbl_tr.at_xpath("td[@class='column-2']/a/@href")?.text
+                let link_lang  = tbl_tr.at_xpath("td/img/@alt")?.text as Any
+                let link_size  = tbl_tr.at_xpath("td[@class='column-9']")?.text as Any
                 let item_value = item()
-                if ((link_url) != ""){
-                    item_value.title = link_label!
+                if ((link_url) != nil) {
+                    item_value.title = link_label as! String
                     item_value.link = link_url!
-                    item_value.size = link_size!
-                    item_value.lang += link_lang!.componentsSeparatedByString("_flag")
+                    item_value.size = link_size as! String
+                    item_value.lang += (link_lang as AnyObject).components(separatedBy: "_flag")
                     item_value.lang.removeLast()
                     tbl_line.append(item_value)
-                    
+
                 }
 
             }
@@ -307,7 +318,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func reloadDataList(){
-        dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.main.async {
             self.tableView.reloadData()
             return
         }
@@ -315,7 +326,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func set_language_icon_by_uniqlang() {
         
-        for (_, element) in uniqlang.enumerate() {
+        for (_, element) in uniqlang.enumerated() {
             if ("\(element)") == "d"{
                 language_icon.append("\u{1f1e9}\u{1f1ea}")
             }else if ("\(element)") == "all"{
@@ -335,9 +346,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
             else if ("\(element)") == "r"{
                 language_icon.append("\u{1F1F7}\u{1F1FA}")
-            }else if ("\(element)") == "tr"{
-                language_icon.append("\u{1F1F9}\u{1F1F7}")
             }
+//            else if ("\(element)") == "tr"{
+//                language_icon.append("\u{1F1F9}\u{1F1F7}")
+//            }
             else {
                 language_icon.append("\(element)")
             }
@@ -347,12 +359,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func changetitleright(value:String) {
         let item = self.navigationItem.leftBarButtonItem
         let button = item!.customView as! UIButton
-        button.setTitle(value, forState:.Normal)
+        button.setTitle(value, for: .normal)
     }
     func changetitleleft(value:String) {
         let item = self.navigationItem.rightBarButtonItem
         let button = item!.customView as! UIButton
-        button.setTitle(value, forState:.Normal)
+        button.setTitle(value, for: .normal)
     }
     
 }

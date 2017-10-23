@@ -31,19 +31,19 @@ class detailsViewController: UIViewController {
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
         let nav = self.navigationController?.navigationBar
-        nav?.barStyle = UIBarStyle.Default
+        nav?.barStyle = UIBarStyle.default
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        imageView.contentMode = .ScaleAspectFit
+        imageView.contentMode = .scaleAspectFit
         let image = UIImage(named: "elrehaLogo")
         imageView.image = image
         navigationItem.titleView = imageView

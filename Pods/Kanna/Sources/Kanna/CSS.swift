@@ -24,6 +24,20 @@ SOFTWARE.
 */
 import Foundation
 
+#if SWIFT_PACKAGE
+import SwiftClibxml2
+#else
+import libxml2
+#endif
+
+#if os(Linux)
+typealias AKTextCheckingResult = TextCheckingResult
+typealias AKRegularExpression  = RegularExpression
+#else
+typealias AKRegularExpression  = NSRegularExpression
+typealias AKTextCheckingResult = NSTextCheckingResult
+#endif
+
 /**
 CSS
 */
@@ -35,16 +49,17 @@ public struct CSS {
     
     @return XPath
     */
-    public static func toXPath(selector: String) -> String? {
+    public static func toXPath(_ selector: String) -> String? {
         var xpath = "//"
         var str = selector
-        
-        while str.utf8.count > 0 {
+        var prev = str
+
+        while str.utf16.count > 0 {
             var attributes: [String] = []
             var combinator: String = ""
             
             if let result = matchBlank(str) {
-                str = (str as NSString).substringFromIndex(result.range.length)
+                str = str.substring(from: str.index(str.startIndex, offsetBy: result.range.length))
             }
             
             // element
@@ -72,17 +87,23 @@ public struct CSS {
             } else {
                 xpath += "\(element)[\(attr)]\(combinator)"
             }
+
+            if str == prev {
+                print("CSS Syntax Error: Unsupport syntax '\(selector)'")
+                return nil
+            }
+            prev = str
         }
         return xpath
     }
 }
 
-private func firstMatch(pattern: String) -> (String) -> NSTextCheckingResult? {
+private func firstMatch(_ pattern: String) -> (String) -> AKTextCheckingResult? {
     return { str in
-        let length = str.utf8.count
+        let length = str.utf16.count
         do {
-            let regex = try NSRegularExpression(pattern: pattern, options: .CaseInsensitive)
-            if let result = regex.firstMatchInString(str, options: .ReportProgress, range: NSRange(location: 0, length: length)) {
+            let regex = try AKRegularExpression(pattern: pattern, options: .caseInsensitive)
+            if let result = regex.firstMatch(in: str, options: .reportProgress, range: NSRange(location: 0, length: length)) {
                 return result
             }
         } catch _ {
@@ -92,7 +113,7 @@ private func firstMatch(pattern: String) -> (String) -> NSTextCheckingResult? {
     }
 }
 
-private func nth(prefix prefix: String, a: Int, b: Int) -> String {
+private func nth(prefix: String, a: Int, b: Int) -> String {
     let sibling = "\(prefix)-sibling::*"
     if a == 0 {
         return "count(\(sibling)) = \(b-1)"
@@ -107,11 +128,11 @@ private func nth(prefix prefix: String, a: Int, b: Int) -> String {
 }
 
 // a(n) + b | a(n) - b
-private func nth_child(a a: Int, b: Int) -> String {
+private func nth_child(a: Int, b: Int) -> String {
     return nth(prefix: "preceding", a: a, b: b)
 }
 
-private func nth_last_child(a a: Int, b: Int) -> String {
+private func nth_last_child(a: Int, b: Int) -> String {
     return nth(prefix: "following", a: a, b: b)
 }
 
@@ -119,7 +140,7 @@ private let matchBlank        = firstMatch("^\\s*|\\s$")
 private let matchElement      = firstMatch("^([a-z0-9\\*_-]+)((\\|)([a-z0-9\\*_-]+))?")
 private let matchClassId      = firstMatch("^([#.])([a-z0-9\\*_-]+)")
 private let matchAttr1        = firstMatch("^\\[([^\\]]*)\\]")
-private let matchAttr2        = firstMatch("^\\[\\s*([^~\\|\\^\\$\\*=\\s]+)\\s*([~\\|\\^\\$\\*]?=)\\s*[\"\']([^\"]*)[\"\']\\s*\\]")
+private let matchAttr2        = firstMatch("^\\[\\s*([^~\\|\\^\\$\\*=\\s]+)\\s*([~\\|\\^\\$\\*]?=)\\s*([^\"]*)\\s*\\]")
 private let matchAttrN        = firstMatch("^:not\\((.*?\\)?)\\)")
 private let matchPseudo       = firstMatch("^:([\'()a-z0-9_+-]+)")
 private let matchCombinator   = firstMatch("^\\s*([\\s>+~,])\\s*")
@@ -129,23 +150,29 @@ private let matchSubNthOfType = firstMatch("nth-of-type\\((odd|even|\\d+)\\)")
 private let matchSubContains  = firstMatch("contains\\([\"\'](.*?)[\"\']\\)")
 private let matchSubBlank     = firstMatch("^\\s*$")
 
-private func substringWithRangeAtIndex(result: NSTextCheckingResult, str: String, at: Int) -> String {
+private func substringWithRangeAtIndex(_ result: AKTextCheckingResult, str: String, at: Int) -> String {
     if result.numberOfRanges > at {
-        let range = result.rangeAtIndex(at)
+        #if os(Linux)
+        let range = result.range(at: at)
+        #else
+            let range = result.rangeAt(at)
+        #endif
         if range.length > 0 {
-            return (str as NSString).substringWithRange(range)
+            let startIndex = str.index(str.startIndex, offsetBy: range.location)
+            let endIndex = str.index(startIndex, offsetBy: range.length)
+            return str.substring(with: startIndex..<endIndex)
         }
     }
     return ""
 }
 
-private func getElement(inout str: String, skip: Bool = true) -> String {
+private func getElement(_ str: inout String, skip: Bool = true) -> String {
     if let result = matchElement(str) {
         let (text, text2) = (substringWithRangeAtIndex(result, str: str, at: 1),
                              substringWithRangeAtIndex(result, str: str, at: 4))
         
         if skip {
-            str = str.substringFromIndex(str.startIndex.advancedBy(result.range.length))
+            str = str.substring(from: str.characters.index(str.startIndex, offsetBy: result.range.length))
         }
         
         // tag with namespace
@@ -161,12 +188,12 @@ private func getElement(inout str: String, skip: Bool = true) -> String {
     return "*"
 }
 
-private func getClassId(inout str: String, skip: Bool = true) -> String? {
+private func getClassId(_ str: inout String, skip: Bool = true) -> String? {
     if let result = matchClassId(str) {
         let (attr, text) = (substringWithRangeAtIndex(result, str: str, at: 1),
                             substringWithRangeAtIndex(result, str: str, at: 2))
         if skip {
-            str = str.substringFromIndex(str.startIndex.advancedBy(result.range.length))
+            str = str.substring(from: str.characters.index(str.startIndex, offsetBy: result.range.length))
         }
         
         if attr.hasPrefix("#") {
@@ -178,13 +205,14 @@ private func getClassId(inout str: String, skip: Bool = true) -> String? {
     return nil
 }
 
-private func getAttribute(inout str: String, skip: Bool = true) -> String? {
+private func getAttribute(_ str: inout String, skip: Bool = true) -> String? {
     if let result = matchAttr2(str) {
         let (attr, expr, text) = (substringWithRangeAtIndex(result, str: str, at: 1),
                                   substringWithRangeAtIndex(result, str: str, at: 2),
-                                  substringWithRangeAtIndex(result, str: str, at: 3))
+                                  substringWithRangeAtIndex(result, str: str, at: 3).replacingOccurrences(of: "[\'\"](.*)[\'\"]", with: "$1", options: .regularExpression, range: nil))
+
         if skip {
-            str = str.substringFromIndex(str.startIndex.advancedBy(result.range.length))
+            str = str.substring(from: str.characters.index(str.startIndex, offsetBy: result.range.length))
         }
         
         switch expr {
@@ -206,7 +234,7 @@ private func getAttribute(inout str: String, skip: Bool = true) -> String? {
     } else if let result = matchAttr1(str) {
         let atr = substringWithRangeAtIndex(result, str: str, at: 1)
         if skip {
-            str = str.substringFromIndex(str.startIndex.advancedBy(result.range.length))
+            str = str.substring(from: str.characters.index(str.startIndex, offsetBy: result.range.length))
         }
         
         return "@\(atr)"
@@ -218,7 +246,7 @@ private func getAttribute(inout str: String, skip: Bool = true) -> String? {
     } else if let result = matchPseudo(str) {
         let one = substringWithRangeAtIndex(result, str: str, at: 1)
         if skip {
-            str = str.substringFromIndex(str.startIndex.advancedBy(result.range.length))
+            str = str.substring(from: str.characters.index(str.startIndex, offsetBy: result.range.length))
         }
         
         switch one {
@@ -247,11 +275,11 @@ private func getAttribute(inout str: String, skip: Bool = true) -> String? {
                 
                 let nthFunc = (nth == "nth-child") ? nth_child : nth_last_child
                 if arg1 == "odd" {
-                    return nthFunc(a: 2, b: 1)
+                    return nthFunc(2, 1)
                 } else if arg1 == "even" {
-                    return nthFunc(a: 2, b: 0)
+                    return nthFunc(2, 0)
                 } else {
-                    return nthFunc(a: 0, b: Int(arg1)!)
+                    return nthFunc(0, Int(arg1)!)
                 }
             } else if let sub = matchSubNthChildN(one) {
                 let (nth, arg1, arg2) = (substringWithRangeAtIndex(sub, str: one, at: 1),
@@ -261,7 +289,7 @@ private func getAttribute(inout str: String, skip: Bool = true) -> String? {
                 let nthFunc = (nth == "nth-child") ? nth_child : nth_last_child
                 let a: Int = (arg1 == "-") ? -1 : Int(arg1)!
                 let b: Int = (arg2.isEmpty) ? 0 : Int(arg2)!
-                return nthFunc(a: a, b: b)
+                return nthFunc(a, b)
             } else if let sub = matchSubNthOfType(one) {
                 let arg1   = substringWithRangeAtIndex(sub, str: one, at: 1)
                 if arg1 == "odd" {
@@ -282,17 +310,25 @@ private func getAttribute(inout str: String, skip: Bool = true) -> String? {
     return nil
 }
 
-private func getAttrNot(inout str: String, skip: Bool = true) -> String? {
+private func getAttrNot(_ str: inout String, skip: Bool = true) -> String? {
     if let result = matchAttrN(str) {
         var one = substringWithRangeAtIndex(result, str: str, at: 1)
         if skip {
-            str = str.substringFromIndex(str.startIndex.advancedBy(result.range.length))
+            str = str.substring(from: str.characters.index(str.startIndex, offsetBy: result.range.length))
         }
         
         if let attr = getAttribute(&one, skip: false) {
             return attr
         } else if let sub = matchElement(one) {
-            let elem = (one as NSString).substringWithRange(sub.rangeAtIndex(1))
+            #if os(Linux)
+            let range = sub.range(at: 1)
+            #else
+                let range = sub.rangeAt(1)
+            #endif
+            let startIndex = one.index(one.startIndex, offsetBy: range.location)
+            let endIndex   = one.index(startIndex, offsetBy: range.length)
+
+            let elem = one.substring(with: startIndex ..< endIndex)
             return "self::\(elem)"
         } else if let attr = getClassId(&one) {
             return attr
@@ -301,11 +337,11 @@ private func getAttrNot(inout str: String, skip: Bool = true) -> String? {
     return nil
 }
 
-private func genCombinator(inout str: String, skip: Bool = true) -> String? {
+private func genCombinator(_ str: inout String, skip: Bool = true) -> String? {
     if let result = matchCombinator(str) {
         let one = substringWithRangeAtIndex(result, str: str, at: 1)
         if skip {
-            str = str.substringFromIndex(str.startIndex.advancedBy(result.range.length))
+            str = str.substring(from: str.characters.index(str.startIndex, offsetBy: result.range.length))
         }
         
         switch one {

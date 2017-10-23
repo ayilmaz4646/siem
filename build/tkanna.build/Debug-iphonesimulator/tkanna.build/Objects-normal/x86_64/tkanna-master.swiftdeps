@@ -1,0 +1,9 @@
+version: "Apple Swift version 4.0 (swiftlang-900.0.65 clang-900.0.37)"
+options: "131fef3bbdf7d42daf30482249f03585"
+build_time: [1507848836, 539425000]
+inputs:
+  "/Users/nimbo/projects/siem/tkanna/item.swift": !dirty [1507841269, 0]
+  "/Users/nimbo/projects/siem/tkanna/checkconnection.swift": !dirty [1507841269, 0]
+  "/Users/nimbo/projects/siem/tkanna/ViewController.swift": !dirty [1507848623, 0]
+  "/Users/nimbo/projects/siem/tkanna/detailsViewController.swift": !dirty [1507841269, 0]
+  "/Users/nimbo/projects/siem/tkanna/AppDelegate.swift": !dirty [1507841269, 0]
