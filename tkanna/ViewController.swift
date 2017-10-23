@@ -286,15 +286,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if let doc = Kanna.HTML(url: (NSURL(string: url)! as URL), encoding: String.Encoding.utf8) {
             for tbl_tr in doc.xpath("//table[@id='tablepress-4']/tbody/tr") {
-                print(tbl_tr)
-                print(tbl_tr.text)
-                print(tbl_tr.at_css("td:nth-child(1)")?.text as Any)
-                print(tbl_tr.at_xpath("td[@class='column-2']/a/@href")?.text)
-                print(tbl_tr.at_xpath("td/img/@alt")?.text as Any)
-                print(tbl_tr.at_xpath("td[@class='column-9']")?.text as Any)
-                if ((tbl_tr.at_xpath("td[@class='column-2']/a/@href")?.text) != nil ){
-                    print("AAAAAAAAAAAAAAA")
-                }
 
                 let link_label = tbl_tr.at_css("td:nth-child(1)")?.text as Any
                 let link_url   = tbl_tr.at_xpath("td[@class='column-2']/a/@href")?.text
