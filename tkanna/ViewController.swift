@@ -43,7 +43,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.present(alert, animated: true, completion: nil)
             
         }
-        htmlParserWithKanna(url: "http://www.elreha.de/technische-handbucher-archiv/")
+        htmlParserWithKanna(url: "https://elreha.eu/technische-handbucher-archiv/")
         pickerViewContainer.isHidden = true
         newPicker.isHidden = true
         
@@ -283,17 +283,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func htmlParserWithKanna(url:String)
     {
-        
-        if let doc = Kanna.HTML(url: (NSURL(string: url)! as URL), encoding: String.Encoding.utf8) {
-            for tbl_tr in doc.xpath("//table[@id='tablepress-4']/tbody/tr") {
-
-                let link_label = tbl_tr.at_css("td:nth-child(1)")?.text as Any
-                let link_url   = tbl_tr.at_xpath("td[@class='column-2']/a/@href")?.text
+        let url = URL(string: url)
+        if let doc = try? HTML(url: url!, encoding: .utf8) {
+            for tbl_tr in doc.xpath("//table[@id='tablepress-1']/tbody/tr") {
+                let link_label = tbl_tr.at_xpath("td[@class='column-1']/a/u/strong")?.text
+                let link_url   = tbl_tr.at_xpath("td[@class='column-1']/a/@href")?.text
                 let link_lang  = tbl_tr.at_xpath("td/img/@alt")?.text as Any
                 let link_size  = tbl_tr.at_xpath("td[@class='column-9']")?.text as Any
                 let item_value = item()
-                if ((link_url) != nil) {
-                    item_value.title = link_label as! String
+                if ((link_url) != nil && (link_label) != nil) {
+                    item_value.title = link_label!
                     item_value.link = link_url!
                     item_value.size = link_size as! String
                     item_value.lang += (link_lang as AnyObject).components(separatedBy: "_flag")
@@ -338,9 +337,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             else if ("\(element)") == "r"{
                 language_icon.append("\u{1F1F7}\u{1F1FA}")
             }
-//            else if ("\(element)") == "tr"{
-//                language_icon.append("\u{1F1F9}\u{1F1F7}")
-//            }
+            else if ("\(element)") == "tu"{
+                language_icon.append("\u{1F1F9}\u{1F1F7}")
+            }
             else {
                 language_icon.append("\(element)")
             }
