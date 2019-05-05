@@ -43,7 +43,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.present(alert, animated: true, completion: nil)
             
         }
-        htmlParserWithKanna(url: "https://elreha.eu/technische-handbucher-archiv/")
+        htmlParserWithKanna(url: "https://elreha.de/technische-handbucher-archiv/")
         pickerViewContainer.isHidden = true
         newPicker.isHidden = true
         
