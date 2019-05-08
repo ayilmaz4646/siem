@@ -286,11 +286,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let url = URL(string: url)
         if let doc = try? HTML(url: url!, encoding: .utf8) {
             for tbl_tr in doc.xpath("//table[@id='tablepress-1']/tbody/tr") {
-                let link_label = tbl_tr.at_xpath("td[@class='column-1']/a/u/strong")?.text
-                let link_url   = tbl_tr.at_xpath("td[@class='column-1']/a/@href")?.text
-                let link_lang  = tbl_tr.at_xpath("td/img/@alt")?.text as Any
-                let link_size  = tbl_tr.at_xpath("td[@class='column-9']")?.text as Any
-                let item_value = item()
+                let link_label  = tbl_tr.at_xpath("td[@class='column-1']")?.text
+                let link_url    = tbl_tr.at_xpath("td[@class='column-1']/a/@href")?.text
+                let link_lang   = tbl_tr.at_xpath("td/img/@alt")?.text as Any
+                let link_size   = tbl_tr.at_xpath("td[@class='column-9']")?.text as Any
+                let item_value  = item()
                 if ((link_url) != nil && (link_label) != nil) {
                     item_value.title = link_label!
                     item_value.link = link_url!
