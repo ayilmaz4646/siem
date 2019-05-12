@@ -201,23 +201,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             tbl_temp = tbl_line
         }
         self.tableView.reloadData()
-        
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if (searchText.isEmpty){
+            if (listLangActive){
+                tbl_temp = tbl_lang
+            }else{
+               tbl_temp = tbl_line
+            }
             self.tableView.reloadData()
             return
         }
         
         if (listLangActive){
             tbl_temp = tbl_lang.filter {
-                $0.title.range(of: searchText, options: .caseInsensitive) != nil
+                $0.title.range(of: searchText, options: [.caseInsensitive, .anchored]) != nil
             }
         }
         else{
             tbl_temp = tbl_line.filter {
-                $0.title.range(of: searchText, options: .caseInsensitive) != nil
+                $0.title.range(of: searchText, options: [.caseInsensitive, .anchored]) != nil
             }
         }
         self.tableView.reloadData()
@@ -288,7 +292,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             for tbl_tr in doc.xpath("//table[@id='tablepress-1']/tbody/tr") {
                 let link_label  = tbl_tr.at_xpath("td[@class='column-1']")?.text
                 let link_url    = tbl_tr.at_xpath("td[@class='column-1']/a/@href")?.text
-                let link_lang   = tbl_tr.at_xpath("td/img/@alt")?.text as Any
+//                let link_lang   = tbl_tr.at_xpath("td/img/@alt")?.text as Any
+                var link_lang = ""
+                for n in 3...8 {
+                    link_lang += tbl_tr.at_xpath("td[@class='column-\(n)']/img/@alt")?.text ?? ""
+                }
                 let link_size   = tbl_tr.at_xpath("td[@class='column-9']")?.text as Any
                 let item_value  = item()
                 if ((link_url) != nil && (link_label) != nil) {
