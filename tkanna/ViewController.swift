@@ -290,13 +290,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let url = URL(string: url)
         if let doc = try? HTML(url: url!, encoding: .utf8) {
             for tbl_tr in doc.xpath("//table[@id='tablepress-1']/tbody/tr") {
-                let link_label  = tbl_tr.at_xpath("td[@class='column-1']")?.text
+                let link_label  = tbl_tr.at_xpath("td[@class='column-1']")?.text?.replacingOccurrences(of: "\\n", with: "", options: .regularExpression)
                 let link_url    = tbl_tr.at_xpath("td[@class='column-1']/a/@href")?.text
 //                let link_lang   = tbl_tr.at_xpath("td/img/@alt")?.text as Any
                 var link_lang = ""
                 for n in 3...8 {
                     link_lang += tbl_tr.at_xpath("td[@class='column-\(n)']/img/@alt")?.text ?? ""
                 }
+                print(link_lang)
                 let link_size   = tbl_tr.at_xpath("td[@class='column-9']")?.text as Any
                 let item_value  = item()
                 if ((link_url) != nil && (link_label) != nil) {
